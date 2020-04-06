@@ -1,5 +1,5 @@
 new hoverEffect({
-  parent: document.querySelector(".distortion"),
+  // parent: document.querySelector(".distortion"),
   intensity: 0.2,
   image1: "img/hero-1.jpg",
   image2: "img/hero-2.jpg",

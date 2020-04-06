@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@1,700&display=swap");
 
+:root {
+  --main-bg-color: #1e1e1e;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +11,29 @@
 }
 
 body {
-  background: #1e1e1e;
+  background: var(--main-bg-color);
   font-size: 62.5%;
 }
 
 .landing {
   display: flex;
   justify-content: space-around;
+  height: 100vh;
 }
 
 .intro {
+  align-self: center;
 }
 
 .distortion {
   background: red;
+  width: 50%;
 }
 
 .intro h2 {
   font-family: Quantico;
-  font-size: 12rem;
+  color: var(--main-bg-color);
+  font-size: 10rem;
+  line-height: 10rem;
+  -webkit-text-stroke: 2px rgb(204, 204, 204);
 }

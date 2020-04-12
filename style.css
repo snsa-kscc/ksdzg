@@ -31,7 +31,8 @@ body {
 }
 
 .intro h2 {
-  font-family: Quantico;
+  font-family: "Quantico", sans-serif;
+  font-style: italic;
   color: var(--main-bg-color);
   font-size: 10rem;
   line-height: 10rem;

@@ -87,6 +87,12 @@ body {
   justify-content: center;
 }
 
+.sixth {
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
 .fourth__text,
 .sixth__text {
   font-family: "Quantico", sans-serif;
@@ -107,8 +113,16 @@ body {
 .sixth__form {
   display: flex;
   justify-content: center;
+  margin-top: 5em;
 }
 
 .fifth__one img {
   max-width: 500px;
+}
+
+label {
+  font-family: "Monument Extended";
+  font-size: 1rem;
+  color: antiquewhite;
+  line-height: 2em;
 }

@@ -1,7 +1,19 @@
-new hoverEffect({
-  // parent: document.querySelector(".distortion"),
-  intensity: 0.2,
-  image1: "img/hero-1.jpg",
-  image2: "img/hero-2.jpg",
-  displacementImage: "img/diss.png",
+let testForm = document.querySelector("#contact form");
+
+testForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(testForm);
+  fetch(testForm.getAttribute("action"), {
+    method: "POST",
+    headers: {
+      Accept: "application/x-www-form-urlencoded;charset=UTF-8",
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+    },
+    body: new URLSearchParams(formData).toString(),
+  }).then((res) => {
+    if (res) {
+      alert("Thank you!");
+    }
+  });
 });

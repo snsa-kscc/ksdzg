@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@1,700&display=swap");
+@font-face {
+  font-family: "Monument Extended";
+  src: url(fonts/MonumentExtended-Regular.otf);
+}
 
 :root {
   --main-bg-color: #1e1e1e;
@@ -15,26 +19,92 @@ body {
   font-size: 62.5%;
 }
 
-.landing {
+.first {
   display: flex;
-  justify-content: space-around;
-  height: 100vh;
 }
 
-.intro {
-  align-self: center;
-}
-
-.distortion {
-  background: red;
-  width: 50%;
-}
-
-.intro h2 {
+.first__text {
   font-family: "Quantico", sans-serif;
   font-style: italic;
-  color: var(--main-bg-color);
   font-size: 10rem;
-  line-height: 10rem;
   -webkit-text-stroke: 2px rgb(204, 204, 204);
+  line-height: 10rem;
+  color: var(--main-bg-color);
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+
+.first__img {
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.second__text {
+  font-family: "Monument Extended";
+  font-size: 2rem;
+  color: antiquewhite;
+  line-height: 2em;
+}
+
+.outline__text {
+  -webkit-text-stroke: 1px rgb(204, 204, 204);
+  color: #1e1e1e;
+}
+
+.second {
+  display: flex;
+  justify-content: space-around;
+  margin: 5%;
+}
+
+.second__two {
+  min-width: 20%;
+}
+
+.third__text,
+.fifth__text {
+  font-family: "Monument Extended";
+  font-size: 2rem;
+  color: antiquewhite;
+  line-height: 2em;
+}
+
+.third {
+  display: flex;
+  justify-content: space-around;
+  margin: 5%;
+}
+
+.third__one {
+  min-width: 20%;
+}
+
+.fourth,
+.sixth {
+  display: flex;
+  justify-content: center;
+}
+
+.fourth__text,
+.sixth__text {
+  font-family: "Quantico", sans-serif;
+  font-style: italic;
+  font-size: 10rem;
+  -webkit-text-stroke: 2px rgb(204, 204, 204);
+  line-height: 10rem;
+  color: var(--main-bg-color);
+}
+
+.fifth {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10em 3em;
+}
+
+.sixth__form {
+  display: flex;
+  justify-content: center;
 }

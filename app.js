@@ -14,6 +14,7 @@ testForm.addEventListener("submit", (e) => {
   }).then((res) => {
     if (res) {
       alert("Thank you!");
+      testForm.reset();
     }
   });
 });

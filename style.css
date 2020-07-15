@@ -6,6 +6,7 @@
 
 :root {
   --main-bg-color: #1e1e1e;
+  --accent-color: rgb(204, 204, 204);
 }
 
 * {
@@ -50,7 +51,7 @@ body {
 
 .outline__text {
   -webkit-text-stroke: 1px rgb(204, 204, 204);
-  color: #1e1e1e;
+  color: var(--main-bg-color);
 }
 
 .second {
@@ -125,4 +126,11 @@ label {
   font-size: 1rem;
   color: antiquewhite;
   line-height: 2em;
+}
+
+input,
+textarea {
+  background-color: var(--main-bg-color);
+  border: none;
+  border-bottom: 1px solid var(--accent-color);
 }

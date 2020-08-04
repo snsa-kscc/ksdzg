@@ -20,8 +20,16 @@ body {
   font-size: 62.5%;
 }
 
+.svg__line {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 0.75;
+  stroke-miterlimit: 10;
+}
+
 .first {
   display: flex;
+  position: relative;
 }
 
 .first__text {

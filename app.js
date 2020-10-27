@@ -1,4 +1,4 @@
-let testForm = document.querySelector("#contact form");
+let testForm = document.querySelector(".sixth__form form");
 
 testForm.addEventListener("submit", (e) => {
   e.preventDefault();

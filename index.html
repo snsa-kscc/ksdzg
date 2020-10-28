@@ -158,21 +158,19 @@
         <h2 class="sixth__text">Lost?? Hit us up</h2>
         <div class="sixth__form">
             <form name="contact" method="POST" action="/#contact" data-netlify="true">
-              <p>
-                <input type="text" name="name" required />
-                <label>Your Name: </label>
-              </p>
-              <p>
-                <input type="email" name="email" required />
-                <label>Your Email: </label>
-              </p>
-              <p>
-                <textarea name="message"></textarea>
-                <label>Message: </label>
-              </p>
-              <p>
-                <button type="submit">Send</button>
-              </p>
+              <div class="form-entry">
+                <input type="text" name="name" placeholder="" required />
+                <label><span>Name</span></label>
+              </div>
+              <div class="form-entry">
+                <input type="email" name="email" placeholder="" required />
+                <label><span>Email</span></label>
+              </div>
+              <div class="form-entry">
+                <textarea name="message" placeholder="" required></textarea>
+                <label><span>Message</span></label>
+              </div>
+              <button type="submit">Send</button>
             </form>
         </div>
       </div>

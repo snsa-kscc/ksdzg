@@ -119,26 +119,85 @@ body {
   margin: 10em 3em;
 }
 
-.sixth__form {
-  display: flex;
-  justify-content: center;
-  margin-top: 5em;
-}
-
 .fifth__one img {
   max-width: 500px;
 }
 
-label {
-  font-family: "Monument Extended";
-  font-size: 1rem;
-  color: antiquewhite;
-  line-height: 2em;
+.sixth__form {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+}
+
+form {
+  width: 80%;
+}
+
+.form-entry {
+  position: relative;
+  height: 50px;
+  overflow: hidden;
 }
 
 input,
 textarea {
+  width: 100%;
+  height: 100%;
+  color: var(--accent-color);
   background-color: var(--main-bg-color);
   border: none;
+  padding-top: 20px;
+  outline: none;
+}
+
+label {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
   border-bottom: 1px solid var(--accent-color);
+  font-family: "Monument Extended";
+  font-size: 1rem;
+  color: var(--accent-color);
+}
+
+label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid blue;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+input:focus + label span,
+input:not(:placeholder-shown) + label span,
+textarea:focus + label span,
+textarea:not(:placeholder-shown) + label span {
+  transform: translateY(-150%);
+  font-size: 12px;
+}
+
+input:focus + label::after,
+input:not(:placeholder-shown) + label::after,
+textarea:focus + label::after,
+textarea:not(:placeholder-shown) + label::after {
+  transform: translateX(0%);
+}
+
+.form-entry span {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+button {
+  margin-top: 50px;
 }

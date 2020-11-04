@@ -21,9 +21,16 @@ svg {
   box-sizing: border-box;
 }
 
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
 body {
   background: var(--main-bg-color);
   font-size: 62.5%;
+  overflow: hidden;
+  height: 100%;
 }
 
 .loader {

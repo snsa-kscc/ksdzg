@@ -1,7 +1,14 @@
 gsap.from('.svg__line', {duration: 2, opacity: 0, delay:1, stagger: 1.3})
 gsap.to('.loader', {delay: 4, duration:2, top: '-110%', ease: Expo.easeInOut, onComplete: () => {
- document.querySelector('.loader').style.display = 'none';
+  document.querySelector('html').style.overflow = 'initial';
+  document.querySelector('body').style.overflow = 'inherit';
 }})
+
+// skrol do vrha
+
+window.addEventListener('unload', () => {
+  window.scrollTo(0, 0); 
+})
 
 // kontaktna
 
@@ -20,7 +27,7 @@ testForm.addEventListener("submit", (e) => {
     body: new URLSearchParams(formData).toString(),
   }).then((res) => {
     if (res) {
-      alert("Thank you!");
+      alert("Hvala!");
       testForm.reset();
     }
   });

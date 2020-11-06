@@ -1,18 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@1,700&display=swap");
-@font-face {
-  font-family: "Monument Extended";
-  src: url(fonts/MonumentExtended-Regular.otf);
-}
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-  --main-bg-color: #1e1e1e;
-  --accent-color: rgb(204, 204, 204);
-  --secondary-color: #a4007b;
-}
-
-svg {
-  width: 100%;
-  height: 100%;
+  --main-bg-color: #2f2440;
+  --accent-color: antiquewhite;
+  --secondary-color: #ba0f30;
 }
 
 * {
@@ -24,12 +15,21 @@ svg {
 html {
   overflow: hidden;
   height: 100%;
+  font-size: 62.5%;
 }
 
 body {
+  font-family: "Merriweather", serif;
+  font-size: clamp(1.6rem, 4.2vw, 2.6rem);
+  line-height: 2em;
+  color: var(--accent-color);
   background: var(--main-bg-color);
-  font-size: 62.5%;
   overflow: hidden;
+  height: 100%;
+}
+
+svg {
+  width: 100%;
   height: 100%;
 }
 
@@ -50,37 +50,31 @@ body {
 
 .first {
   display: flex;
-  position: relative;
+  flex-direction: column;
+  width: 80%;
+  padding-top: 20vh;
 }
 
 .first__text {
   font-family: "Quantico", sans-serif;
+  font-weight: 700;
   font-style: italic;
-  font-size: 10rem;
-  -webkit-text-stroke: 2px var(--accent-color);
-  line-height: 10rem;
+  line-height: 1.2em;
+  font-size: clamp(5rem, 13vw, 16rem);
+  text-align: right;
+  -webkit-text-stroke: 1px var(--accent-color);
   color: var(--secondary-color);
-  position: absolute;
-  top: 50%;
-  left: 10%;
+  transform: translateX(10%);
+}
+
+.first__text:nth-child(2) {
+  margin-bottom: 0.8em;
 }
 
 .first__img {
+  height: 100vmin;
   object-fit: cover;
-  height: 100vh;
-  width: 100vw;
-}
-
-.second__text {
-  font-family: "Monument Extended";
-  font-size: 2rem;
-  color: antiquewhite;
-  line-height: 2em;
-}
-
-.outline__text {
-  -webkit-text-stroke: 1px rgb(204, 204, 204);
-  color: var(--main-bg-color);
+  object-position: left;
 }
 
 .second {
@@ -89,32 +83,39 @@ body {
   margin: 5%;
 }
 
+.accent__text {
+  font-size: clamp(2.5rem, 6.5vw, 4rem);
+  line-height: 2em;
+}
+
 .second__two {
   min-width: 20%;
 }
 
-.third__text,
-.fifth__text {
-  font-family: "Monument Extended";
-  font-size: 2rem;
-  color: antiquewhite;
-  line-height: 2em;
-}
-
 .third {
-  display: flex;
-  justify-content: space-around;
-  margin: 5%;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+  align-items: center;
+  margin: 10% 5% 0;
 }
 
 .third__one {
-  min-width: 20%;
+  line-height: 0;
+}
+
+.third__img {
+  width: 100%;
+  height: 100vmin;
+  object-fit: cover;
+  object-position: left;
 }
 
 .fourth,
 .sixth {
   display: flex;
   justify-content: center;
+  border: 1px solid red;
 }
 
 .sixth {
@@ -128,7 +129,7 @@ body {
   font-family: "Quantico", sans-serif;
   font-style: italic;
   font-size: 10rem;
-  -webkit-text-stroke: 2px rgb(204, 204, 204);
+  -webkit-text-stroke: 2px var(--accent-color);
   line-height: 10rem;
   color: var(--main-bg-color);
 }
@@ -143,6 +144,8 @@ body {
 .fifth__one img {
   max-width: 500px;
 }
+
+/* forma početak */
 
 .sixth__form {
   width: 90%;
@@ -192,7 +195,7 @@ label::after {
   left: 0px;
   height: 100%;
   width: 100%;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid var(--secondary-color);
   transform: translateX(-100%);
   transition: transform 0.3s ease;
 }

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-  --main-bg-color: #2f2440;
+  --main-bg-color: #1a0936;
   --accent-color: antiquewhite;
   --secondary-color: #ba0f30;
 }
@@ -20,7 +20,7 @@ html {
 
 body {
   font-family: "Merriweather", serif;
-  font-size: clamp(1.6rem, 4.2vw, 2.6rem);
+  font-size: clamp(1.6rem, 4.2vw, 2.2rem);
   line-height: 2em;
   color: var(--accent-color);
   background: var(--main-bg-color);
@@ -85,6 +85,8 @@ svg {
 
 .accent__text {
   font-size: clamp(2.5rem, 6.5vw, 4rem);
+  display: block;
+  margin-bottom: 0.9em;
   line-height: 2em;
 }
 
@@ -106,7 +108,7 @@ svg {
 
 .third__img {
   width: 100%;
-  height: 100vmin;
+  height: 90vmin;
   object-fit: cover;
   object-position: left;
 }

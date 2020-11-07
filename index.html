@@ -89,8 +89,8 @@ Site by dvasadva.com 🥰
   <div class="second">
     <div class="second__one">
       <p class="second__text">
-        <span class="accent__text">Znamo da je teško.</span><br>
-        Jer bit će teško.<br>
+        <span class="accent__text">Znamo da je teško.</span></p>
+      <p class="second__text">Jer bit će teško.<br>
         Teško je napraviti promjenu, pokrenuti se.<br>
         Teško je mijenjati navike, ići protiv sebe, kako bi napravili nešto za sebe.
       </p>
@@ -101,8 +101,8 @@ Site by dvasadva.com 🥰
     <div class="third__one"><img class="third__img" src="img/hand.jpg" alt="hand" /></div>
     <div class="third__two">
       <p class="third__text">
-        <span class="accent__text">No jednom moraš početi.</span><br>
-        I znamo da bi moglo biti zastrašujuće u početku, biti „novi“.<br>
+        <span class="accent__text">No jednom moraš početi.</span></p>
+      <p class="third__text">I znamo da bi moglo biti zastrašujuće u početku, biti „novi“.<br>
         …svi smo to prošli. I bit će teško, zato smo ovdje.<br>
         No, prvi teški korak je iza tebe, zato si ti ovdje.
       </p>
@@ -131,7 +131,11 @@ Site by dvasadva.com 🥰
   <div class="sixth">
     <h2 class="sixth__text">Lost?? Hit us up</h2>
     <div class="sixth__form">
-      <form name="contact" method="POST" action="/#contact" data-netlify="true">
+      <form name="contact" method="POST" action="/#contact" netlify-honeypot="bot-field" data-netlify="true">
+        <div class="form-entry">
+          <input name="bot-field" />
+          <label><span>dont fill this</span></label>
+        </div>
         <div class="form-entry">
           <input type="text" name="name" placeholder="&nbsp;" required />
           <label><span>Name</span></label>

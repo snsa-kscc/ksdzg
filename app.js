@@ -33,8 +33,19 @@ testForm.addEventListener("submit", (e) => {
     body: new URLSearchParams(formData).toString(),
   }).then((res) => {
     if (res) {
-      alert("Hvala!");
+      document.querySelector(".confirmation").classList.add("show");
       testForm.reset();
+      setTimeout(() => {
+        document.querySelector(".confirmation").classList.remove("show");
+      }, 5000);
     }
   });
 });
+
+// const btn = document.querySelector(".testni");
+// btn.addEventListener("click", () => {
+//   document.querySelector(".confirmation").classList.add("show");
+//   setTimeout(() => {
+//     document.querySelector(".confirmation").classList.remove("show");
+//   }, 5000);
+// });

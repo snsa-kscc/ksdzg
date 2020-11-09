@@ -37,6 +37,50 @@ svg {
   height: 100%;
 }
 
+.st0 {
+  fill: none;
+}
+
+.st1 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 3;
+}
+
+.st2 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: none;
+  stroke: #fff200;
+  stroke-width: 2;
+}
+
+.st3 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: none;
+  stroke: #ffffff;
+}
+
+.st4 {
+  fill: none;
+  stroke: #ffffff;
+}
+
+.st5 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.st6 {
+  fill: #ffffff;
+}
+
+.svg__line {
+  fill: #000000;
+}
+
 .loader {
   height: 100vh;
   width: 100vw;
@@ -46,10 +90,6 @@ svg {
   justify-content: center;
   align-items: center;
   background-color: var(--main-bg-color);
-}
-
-.svg__line {
-  fill: #000000;
 }
 
 a {
@@ -149,7 +189,6 @@ button {
 .sixth {
   display: flex;
   justify-content: center;
-  border: 1px solid red;
 }
 
 .sixth {

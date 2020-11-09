@@ -88,14 +88,19 @@ button {
   font-style: italic;
   line-height: 1.2em;
   font-size: clamp(5rem, 13vw, 16rem);
-  text-align: right;
   -webkit-text-stroke: 1px var(--accent-color);
   color: var(--secondary-color);
-  transform: translateX(10%);
 }
 
-.first__text:nth-child(2) {
-  margin-bottom: 0.8em;
+.overflow {
+  display: flex;
+  justify-content: flex-end;
+  transform: translateX(10%);
+  overflow-y: hidden;
+}
+
+.overflow:nth-child(2) {
+  margin-bottom: 3em;
 }
 
 .first__img {

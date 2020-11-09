@@ -1,3 +1,8 @@
+let characters = document.querySelectorAll(".first__text");
+characters.forEach((e, index) => {
+  gsap.to(e, 0, { y: 160 });
+});
+
 gsap.from(".svg__line", { duration: 2, opacity: 0, delay: 1, stagger: 1.3 });
 gsap.to(".loader", {
   delay: 4,
@@ -7,8 +12,23 @@ gsap.to(".loader", {
   onComplete: () => {
     document.querySelector("html").style.overflow = "initial";
     document.querySelector("body").style.overflow = "inherit";
+    animateUpCharacter();
   },
 });
+
+function animateUpCharacter() {
+  characters.forEach((e, index) => {
+    // gsap.to(e, 0, { y: 105 });
+    gsap.to(e, 0.7, {
+      y: 0,
+      delay: 0.1 * index,
+      ease: CustomEase.create(
+        "custom",
+        "M0,0 C0.126,0.382 0.488,0.818 0.646,0.966 0.838,1.146 0.818,1.001 1,1"
+      ),
+    });
+  });
+}
 
 // skrol do vrha
 

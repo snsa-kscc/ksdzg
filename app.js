@@ -3,6 +3,31 @@ const locoScroll = new LocomotiveScroll({
   smooth: true,
 });
 
+//
+
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+  scrollTop(value) {
+    return arguments.length
+      ? locoScroll.scrollTo(value, 0, 0)
+      : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+  },
+  pinType: document.querySelector("[data-scroll-container]").style.transform
+    ? "transform"
+    : "fixed",
+});
+
+//
+
 let characters = document.querySelectorAll(".first__text");
 characters.forEach((e, index) => {
   gsap.to(e, 0, { y: 160 });
@@ -15,8 +40,8 @@ gsap.to(".loader", {
   top: "-100%",
   ease: Expo.easeInOut,
   onComplete: () => {
-    document.querySelector("html").style.overflow = "initial";
-    document.querySelector("body").style.overflow = "inherit";
+    document.querySelector("html").classList.add("overflow--reset");
+    document.querySelector("body").classList.add("overflow--reset");
     animateUpCharacter();
   },
 });
@@ -35,7 +60,24 @@ function animateUpCharacter() {
   });
 }
 
-//tu
+let tl = gsap.to(".logotip__ksd", { scale: 0.8, opacity: 1 });
+
+ScrollTrigger.create({
+  trigger: ".fourth",
+  start: "50% 50%",
+  end: "+=2000",
+  scroller: "[data-scroll-container]",
+  animation: tl,
+  scrub: true,
+  pin: true,
+});
+
+//
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.refresh();
+
+//
 
 // skrol do vrha
 

@@ -16,19 +16,22 @@
   display: none;
 }
 
+.overflow--reset {
+  overflow: auto;
+}
+
 html {
-  overflow: hidden;
-  height: 100%;
   font-size: 62.5%;
+  overflow: hidden;
 }
 
 body {
+  overflow: hidden;
   font-family: "Merriweather", serif;
   font-size: clamp(1.6rem, 4.2vw, 2.2rem);
   line-height: 2em;
   color: var(--accent-color);
   background: var(--main-bg-color);
-  overflow: hidden;
   height: 100%;
 }
 
@@ -79,6 +82,10 @@ svg {
 
 .svg__line {
   fill: #000000;
+}
+
+[data-scroll-container] {
+  overflow-x: hidden;
 }
 
 .loader {
@@ -189,6 +196,11 @@ button {
 .sixth {
   display: flex;
   justify-content: center;
+}
+
+.logotip__ksd {
+  transform: scale(2);
+  opacity: 0.1;
 }
 
 .sixth {

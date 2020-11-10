@@ -88,6 +88,15 @@ svg {
   overflow-x: hidden;
 }
 
+.fade {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: all 1s linear;
+}
+
 .loader {
   height: 100vh;
   width: 100vw;
@@ -129,14 +138,24 @@ button {
   padding-top: 20vh;
 }
 
-.first__text {
+.title__text {
   font-family: "Quantico", sans-serif;
   font-weight: 700;
   font-style: italic;
   line-height: 1.2em;
-  font-size: clamp(5rem, 13vw, 16rem);
   -webkit-text-stroke: 1px var(--accent-color);
+}
+
+.title__text--head {
+  font-size: clamp(5rem, 13vw, 16rem);
   color: var(--secondary-color);
+}
+
+.title__text--subhead {
+  font-size: clamp(4rem, 7vw, 12rem);
+  color: var(--main-bg-color);
+  text-align: center;
+  margin: 0 5%;
 }
 
 .overflow {
@@ -178,7 +197,7 @@ button {
   grid-gap: 2em;
   grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
   align-items: center;
-  margin: 10% 5% 0;
+  margin: 5% 5% 0;
 }
 
 .third__one {
@@ -192,18 +211,19 @@ button {
   object-position: left;
 }
 
-.fourth,
-.sixth {
-  display: flex;
-  justify-content: center;
-}
-
 .logotip__ksd {
   transform: scale(2);
-  opacity: 0.1;
+  opacity: 0;
 }
 
+.roots {
+  transform: translateY(-20%);
+}
+
+/* forma početak */
+
 .sixth {
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 4rem;
@@ -211,35 +231,13 @@ button {
   overflow: hidden;
 }
 
-.fourth__text,
-.sixth__text {
-  font-family: "Quantico", sans-serif;
-  font-style: italic;
-  font-size: 10rem;
-  -webkit-text-stroke: 2px var(--accent-color);
-  line-height: 10rem;
-  color: var(--main-bg-color);
-}
-
-.fifth {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 10em 3em;
-}
-
-.fifth__one img {
-  max-width: 500px;
-}
-
-/* forma početak */
-
 .sixth__form {
   width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5em;
+  line-height: 0.7em;
 }
 
 form {
@@ -248,7 +246,7 @@ form {
 
 .form-entry {
   position: relative;
-  height: 50px;
+  height: 5rem;
   overflow: hidden;
 }
 
@@ -269,10 +267,9 @@ label {
   left: 0%;
   width: 100%;
   height: 100%;
+  font-size: 0.7em;
   pointer-events: none;
   border-bottom: 1px solid var(--accent-color);
-  font-family: "Monument Extended";
-  font-size: 1rem;
   color: var(--accent-color);
 }
 

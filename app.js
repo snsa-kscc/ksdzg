@@ -28,7 +28,7 @@ ScrollTrigger.scrollerProxy("[data-scroll-container]", {
 
 //
 
-let characters = document.querySelectorAll(".first__text");
+let characters = document.querySelectorAll(".title__text");
 characters.forEach((e, index) => {
   gsap.to(e, 0, { y: 160 });
 });
@@ -70,6 +70,36 @@ ScrollTrigger.create({
   animation: tl,
   scrub: true,
   pin: true,
+});
+
+// gsap.to(".fade-in", {
+//   scrollTrigger: {
+//     trigger: ".fade-in",
+//     scroller: "[data-scroll-container]",
+//     start: "1px 85%",
+//   },
+//   opacity: 1,
+//   duration: 1,
+// });
+
+const observableItems = document.querySelectorAll(".fade");
+
+const options = {
+  threshold: 0,
+  rootMargin: "0px 0px -25% 0px",
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0) {
+      entry.target.classList.add("fade-in");
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+observableItems.forEach((item) => {
+  observer.observe(item);
 });
 
 //

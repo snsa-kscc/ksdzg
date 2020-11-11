@@ -60,12 +60,13 @@ function animateUpCharacter() {
   });
 }
 
+// gsap.set(".logotip__ksd", { svgOrigin: "842 595" });
 let tl = gsap.to(".logotip__ksd", { scale: 0.8, opacity: 1 });
 
 ScrollTrigger.create({
   trigger: ".fourth",
   start: "50% 50%",
-  end: "+=2000",
+  end: () => "+=" + document.querySelector(".fourth").offsetWidth,
   scroller: "[data-scroll-container]",
   animation: tl,
   scrub: true,

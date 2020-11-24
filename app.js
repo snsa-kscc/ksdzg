@@ -28,7 +28,12 @@ ScrollTrigger.scrollerProxy("[data-scroll-container]", {
 
 //
 
-let characters = document.querySelectorAll(".title__text");
+let characters = [
+  document.querySelectorAll(".overflow:nth-child(1) .title__text"),
+  document.querySelectorAll(".overflow:nth-child(2) .title__text"),
+  document.querySelectorAll(".overflow:nth-child(3) .title__text"),
+];
+
 characters.forEach((e, index) => {
   gsap.to(e, 0, { y: 160 });
 });
@@ -47,15 +52,28 @@ gsap.to(".loader", {
 });
 
 function animateUpCharacter() {
-  characters.forEach((e, index) => {
+  characters[0].forEach((e, index) => {
     // gsap.to(e, 0, { y: 105 });
-    gsap.to(e, 0.5, {
+    gsap.to(e, 0.3, {
       y: 0,
-      delay: 0.05 * index,
-      ease: CustomEase.create(
-        "custom",
-        "M0,0 C0.126,0.382 0.488,0.818 0.646,0.966 0.838,1.146 0.818,1.001 1,1"
-      ),
+      delay: 0.03 * index,
+      ease: "power1.out",
+    });
+  });
+  characters[1].forEach((e, index) => {
+    // gsap.to(e, 0, { y: 105 });
+    gsap.to(e, 0.4, {
+      y: 0,
+      delay: 0.04 * index,
+      ease: "power1.out",
+    });
+  });
+  characters[2].forEach((e, index) => {
+    // gsap.to(e, 0, { y: 105 });
+    gsap.to(e, 0.4, {
+      y: 0,
+      delay: 0.04 * index,
+      ease: "power1.out",
     });
   });
 }
@@ -148,4 +166,14 @@ testForm.addEventListener("submit", (e) => {
 //   setTimeout(() => {
 //     document.querySelector(".confirmation").classList.remove("show");
 //   }, 5000);
+// });
+
+//// funkcionalnost za top za navbar
+
+// locoScroll.on("scroll", () => {
+//   if (locoScroll.scroll.instance.scroll.y == 0) {
+//     console.log("top");
+//   } else {
+//     console.log("bot");
+//   }
 // });

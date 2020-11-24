@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Goldman:wght@700&family=Titillium+Web:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-  --main-bg-color: #1a0936;
-  --accent-color: antiquewhite;
-  --secondary-color: #ba0f30;
+  --main-bg-color: #1c1c1c;
+  --accent-color: #cecece;
+  --secondary-color: #ca3434;
 }
 
 * {
@@ -27,13 +27,25 @@ html {
 
 body {
   overflow: hidden;
-  font-family: "Merriweather", serif;
+  font-family: "Titillium Web", sans-serif;
   font-size: clamp(1.6rem, 4.2vw, 2.2rem);
   line-height: 2em;
   color: var(--accent-color);
   background: var(--main-bg-color);
+  /* background-image: var(--gradient); */
+  /* background-size: 400%; */
+  /* animation: bg-animation 20s infinite alternate; */
   height: 100%;
 }
+
+/* @keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+} */
 
 svg {
   width: 100%;
@@ -113,17 +125,30 @@ a {
   text-decoration: none;
   outline: 0;
   transition: color 0.3s ease;
+  position: relative;
 }
 
-a:hover {
-  color: var(--main-bg-color);
+a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 0;
+  background: var(--secondary-color);
+  bottom: 0;
+  transition: all 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 button {
   font-size: clamp(1.2rem, 3.7vw, 2rem);
   font-family: inherit;
   cursor: pointer;
-  padding: 20px;
+  margin-top: 5rem;
+  padding: 2rem 4rem;
   color: var(--accent-color);
   background: var(--secondary-color);
   border: none;
@@ -134,21 +159,21 @@ button {
 .first {
   display: flex;
   flex-direction: column;
+  place-items: center;
   width: 80%;
+  height: 100vh;
   padding-top: 20vh;
 }
 
 .title__text {
-  font-family: "Quantico", sans-serif;
+  font-family: "Goldman", cursive;
   font-weight: 700;
-  font-style: italic;
   line-height: 1.2em;
-  -webkit-text-stroke: 1px var(--accent-color);
 }
 
 .title__text--head {
-  font-size: clamp(5rem, 13vw, 16rem);
-  color: var(--secondary-color);
+  font-size: clamp(3rem, 10vw, 16rem);
+  /* color: var(--secondary-color); */
 }
 
 .title__text--subhead {
@@ -156,6 +181,7 @@ button {
   color: var(--main-bg-color);
   text-align: center;
   margin: 0 5%;
+  -webkit-text-stroke: 1px var(--accent-color);
 }
 
 .overflow {
@@ -165,7 +191,7 @@ button {
   overflow-y: hidden;
 }
 
-.overflow:nth-child(2) {
+.overflow:nth-child(3) {
   margin-bottom: 3em;
 }
 
@@ -183,6 +209,7 @@ button {
 
 .accent__text {
   font-size: clamp(2.5rem, 6.5vw, 4rem);
+  font-weight: 700;
   display: block;
   margin-bottom: 0.9em;
   line-height: 2em;
@@ -254,6 +281,7 @@ input,
 textarea {
   width: 100%;
   height: 100%;
+  font-family: inherit;
   color: var(--accent-color);
   background-color: var(--main-bg-color);
   border: none;
@@ -268,6 +296,7 @@ label {
   width: 100%;
   height: 100%;
   font-size: 0.7em;
+  font-weight: 200;
   pointer-events: none;
   border-bottom: 1px solid var(--accent-color);
   color: var(--accent-color);
@@ -306,10 +335,6 @@ textarea:not(:placeholder-shown) + label::after {
   transition: all 0.3s ease;
 }
 
-button {
-  margin-top: 50px;
-}
-
 .confirmation {
   background: var(--secondary-color);
   padding: 2em;
@@ -324,4 +349,8 @@ button {
 .show {
   transform: translateY(0%);
   opacity: 1;
+}
+
+.pin-spacer {
+  z-index: -1;
 }

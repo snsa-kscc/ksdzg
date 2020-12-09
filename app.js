@@ -38,7 +38,12 @@ characters.forEach((e, index) => {
   gsap.to(e, 0, { y: 160 });
 });
 
-gsap.from(".svg__line", { duration: 2, opacity: 0, delay: 1, stagger: 1.3 });
+gsap.from(".svg__line--black", {
+  duration: 2,
+  opacity: 0,
+  delay: 1,
+  stagger: 1.3,
+});
 gsap.to(".loader", {
   delay: 4,
   duration: 1.7,
@@ -170,10 +175,12 @@ testForm.addEventListener("submit", (e) => {
 
 //// funkcionalnost za top za navbar
 
-// locoScroll.on("scroll", () => {
-//   if (locoScroll.scroll.instance.scroll.y == 0) {
-//     console.log("top");
-//   } else {
-//     console.log("bot");
-//   }
-// });
+locoScroll.on("scroll", () => {
+  if (locoScroll.scroll.instance.scroll.y <= 10) {
+    document.querySelector("nav").classList.add("fade-in");
+    document.querySelector("nav").classList.remove("fade-out");
+  } else {
+    document.querySelector("nav").classList.add("fade-out");
+    document.querySelector("nav").classList.remove("fade-in");
+  }
+});

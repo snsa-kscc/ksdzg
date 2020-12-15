@@ -7,15 +7,20 @@
 */
 
 :root {
-  --main-bg-color: #1c1c1c;
+  --main-bg-color: #0f1218;
   --accent-color: #cecece;
   --secondary-color: #ca3434;
+  --gradient: linear-gradient(90deg, #2b2a2a, #1b1b1b, #0f1218);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+img {
+  display: block;
 }
 
 .hidden {
@@ -35,23 +40,13 @@ body {
   overflow: hidden;
   font-family: "Titillium Web", sans-serif;
   font-size: clamp(1.6rem, 4.2vw, 2.2rem);
-  line-height: 2em;
+  line-height: 1.6em;
   color: var(--accent-color);
   background: var(--main-bg-color);
-  /* background-image: var(--gradient); */
-  /* background-size: 400%; */
-  /* animation: bg-animation 20s infinite alternate; */
+  /* background-image: var(--gradient);
+  background-size: 200%; */
   height: 100%;
 }
-
-/* @keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
-} */
 
 svg {
   width: 100%;
@@ -116,11 +111,13 @@ svg {
 
 .fade-in {
   opacity: 1;
+  pointer-events: auto;
   transition: all 1s linear;
 }
 
 .fade-out {
   opacity: 0;
+  pointer-events: none;
   transition: all 1s linear;
 }
 
@@ -150,6 +147,7 @@ a::after {
   height: 1px;
   width: 0;
   background: var(--secondary-color);
+  left: 0;
   bottom: 0;
   transition: all 0.3s ease;
 }
@@ -167,7 +165,7 @@ button {
   font-family: inherit;
   cursor: pointer;
   margin-top: 5rem;
-  padding: 2rem 4rem;
+  padding: 1rem 4rem;
   color: var(--accent-color);
   background: var(--secondary-color);
   border: none;
@@ -183,7 +181,7 @@ header {
   letter-spacing: 0.5em;
   font-size: 0.6em;
   height: 15vh;
-  padding: 0 4em;
+  padding: 0 4em 0 0;
 }
 
 .logo {
@@ -196,44 +194,39 @@ nav ul {
 }
 
 nav li + li {
-  padding-left: 3em;
+  padding-left: 5em;
 }
 
 .first {
   display: flex;
-  flex-direction: row;
-  place-items: center;
+  justify-content: space-between;
+  align-items: center;
   height: 85vh;
 }
 
 .title__text {
+  font-size: clamp(3rem, 7vw, 8rem);
   font-family: "Goldman", cursive;
   font-weight: 700;
   line-height: 1.2em;
 }
 
-.title__text--head {
-  font-size: clamp(3rem, 7vw, 8rem);
-  /* color: var(--secondary-color); */
-}
-
 .title__text--subhead {
   font-size: clamp(3rem, 10vw, 12rem);
-  color: var(--main-bg-color);
+  color: transparent;
   text-align: center;
   margin: 0 5%;
   -webkit-text-stroke: 1px var(--accent-color);
 }
 
-.overflow {
-  display: flex;
-  justify-content: center;
-  transform: translateX(10%);
-  overflow-y: hidden;
+.title__text--accent {
+  color: var(--secondary-color);
 }
 
-.overflow:nth-child(3) {
-  margin-bottom: 3em;
+.overflow {
+  display: flex;
+  transform: translateX(18%);
+  overflow-y: hidden;
 }
 
 .first__img {
@@ -245,47 +238,79 @@ nav li + li {
 .second {
   display: flex;
   justify-content: space-around;
-  margin: 5%;
+  align-items: center;
+  margin: 10em 9em;
 }
 
 .accent__text {
-  font-size: clamp(2.5rem, 6.5vw, 4rem);
+  font-size: clamp(2.5rem, 6.5vw, 11rem);
   font-weight: 700;
   display: block;
-  margin-bottom: 0.9em;
-  line-height: 2em;
+  line-height: 1em;
 }
 
-.second__two {
-  min-width: 20%;
+.link__text {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-size: 0.6em;
 }
+
+.link__text::after {
+  content: ">";
+  color: var(--secondary-color);
+}
+
+/* dupliciranje link teksta s heder konfama */
+
+.glitch img {
+  height: clamp(25rem, 65vh, 70rem);
+  width: 100%;
+  object-fit: cover;
+}
+
+/* .text__glitch {
+  color: var(--main-bg-color);
+  font-size: clamp(2.5rem, 6.5vw, 9rem);
+  font-weight: 700;
+  display: block;
+  line-height: 1em;
+} */
 
 .third {
-  display: grid;
+  /* display: grid;
   grid-gap: 2em;
   grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
   align-items: center;
-  margin: 5% 5% 0;
+  margin: 5% 5% 0; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8em 4em 0;
 }
 
-.third__one {
-  line-height: 0;
+.third > * {
+  margin-bottom: 1.7em;
 }
 
-.third__img {
-  width: 100%;
-  height: 90vmin;
-  object-fit: cover;
-  object-position: left;
+.third p {
+  font-size: clamp(2rem, 3vh, 3rem);
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch h1 {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  color: var(--main-bg-color);
 }
 
 .logotip__ksd {
   transform: scale(2);
   opacity: 0;
-}
-
-.roots {
-  transform: translateY(-20%);
 }
 
 /* forma početak */
@@ -299,7 +324,7 @@ nav li + li {
   overflow: hidden;
 }
 
-.sixth__form {
+.form {
   width: 90%;
   display: flex;
   justify-content: center;
@@ -324,7 +349,7 @@ textarea {
   height: 100%;
   font-family: inherit;
   color: var(--accent-color);
-  background-color: var(--main-bg-color);
+  background-color: transparent;
   border: none;
   padding-top: 20px;
   outline: none;

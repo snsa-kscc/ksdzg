@@ -141,7 +141,7 @@ window.addEventListener("unload", () => {
 
 // kontaktna
 
-let testForm = document.querySelector(".sixth__form form");
+let testForm = document.querySelector(".form form");
 
 testForm.addEventListener("submit", (e) => {
   e.preventDefault();

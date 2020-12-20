@@ -21,6 +21,7 @@
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 .hidden {
@@ -212,7 +213,7 @@ nav li + li {
 }
 
 .title__text--subhead {
-  font-size: clamp(3rem, 10vw, 12rem);
+  font-size: clamp(3rem, 10vw, 10rem);
   color: transparent;
   text-align: center;
   margin: 0 5%;
@@ -317,11 +318,21 @@ nav li + li {
 
 .sixth {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 4rem;
+  gap: 2em;
+  padding-bottom: 5em;
   position: relative;
   overflow: hidden;
+}
+
+.sixth div:first-child {
+  background: white;
+  color: var(--main-bg-color);
+}
+
+.sixth > div {
+  flex-basis: 100%;
 }
 
 .form {

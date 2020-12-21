@@ -10,7 +10,7 @@
   --main-bg-color: #0f1218;
   --accent-color: #cecece;
   --secondary-color: #ca3434;
-  --gradient: linear-gradient(90deg, #2b2a2a, #1b1b1b, #0f1218);
+  --tertiary-color: #8be8d2;
 }
 
 * {
@@ -309,6 +309,14 @@ nav li + li {
   color: var(--main-bg-color);
 }
 
+.fifth {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1em;
+  margin: 3em;
+}
+
 .logotip__ksd {
   transform: scale(2);
   opacity: 0;
@@ -319,20 +327,50 @@ nav li + li {
 .sixth {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 2em;
-  padding-bottom: 5em;
+  padding-bottom: 3em;
   position: relative;
   overflow: hidden;
 }
 
-.sixth div:first-child {
-  background: white;
+.sixth > div:first-child {
+  background: var(--tertiary-color);
   color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2em 0 2em 2em;
 }
 
 .sixth > div {
   flex-basis: 100%;
+}
+
+.footer-accent__text {
+  font-size: clamp(2.5rem, 6.5vw, 11rem);
+  font-weight: 700;
+  display: block;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.footer-accent__text p:nth-child(3) {
+  transform: translateX(1em);
+}
+
+.footer-location {
+  display: flex;
+}
+
+.circle {
+  background: black;
+  border-radius: 50%;
+  width: 6em;
+  height: 6em;
+}
+
+.circle + div {
+  margin-left: 2em;
 }
 
 .form {

@@ -102,6 +102,10 @@ svg {
   fill: #ffffff;
 }
 
+.svg__line--tertiary {
+  fill: var(--tertiary-color);
+}
+
 [data-scroll-container] {
   overflow-x: hidden;
 }
@@ -180,7 +184,7 @@ header {
   align-items: center;
   text-transform: uppercase;
   letter-spacing: 0.5em;
-  font-size: 0.6em;
+  font-size: 0.5em;
   height: 15vh;
   padding: 0 4em 0 0;
 }
@@ -251,9 +255,11 @@ nav li + li {
 }
 
 .link__text {
+  display: block;
   text-transform: uppercase;
   letter-spacing: 0.5em;
-  font-size: 0.6em;
+  font-size: 1.4rem;
+  margin: 2.5em 0;
 }
 
 .link__text::after {
@@ -295,7 +301,7 @@ nav li + li {
 }
 
 .third p {
-  font-size: clamp(2rem, 3vh, 3rem);
+  font-size: clamp(1.2rem, 4vw, 2.2rem);
 }
 
 .glitch {
@@ -311,10 +317,23 @@ nav li + li {
 
 .fifth {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(14, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 1em;
-  margin: 3em;
+  row-gap: 2em;
+  column-gap: 1em;
+  margin: 3em 3em 10em 3em;
+}
+
+.fifth__one {
+  grid-column: 3 / span 6;
+  font-size: 4rem;
+  line-height: 1.4em;
+}
+
+.fifth__two {
+  grid-column: 10 / span 3;
+  grid-row: 2;
+  align-self: center;
 }
 
 .logotip__ksd {
@@ -339,11 +358,12 @@ nav li + li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2em 0 2em 2em;
+  padding-left: 3em;
 }
 
 .sixth > div {
   flex-basis: 100%;
+  padding: 4em 0;
 }
 
 .footer-accent__text {

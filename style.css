@@ -206,7 +206,7 @@ nav li + li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 85vh;
+  height: 70vh;
 }
 
 .title__text {
@@ -343,8 +343,9 @@ nav li + li {
 
 /* forma početak */
 
-.sixth {
+footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
   padding-bottom: 3em;
@@ -352,7 +353,7 @@ nav li + li {
   overflow: hidden;
 }
 
-.sixth > div:first-child {
+footer > div:first-child {
   background: var(--tertiary-color);
   color: var(--main-bg-color);
   display: flex;
@@ -361,8 +362,8 @@ nav li + li {
   padding-left: 3em;
 }
 
-.sixth > div {
-  flex-basis: 100%;
+footer > div {
+  flex: 1 0 50rem;
   padding: 4em 0;
 }
 

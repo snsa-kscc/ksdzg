@@ -29,9 +29,9 @@ ScrollTrigger.scrollerProxy("[data-scroll-container]", {
 //
 
 let characters = [
-  document.querySelectorAll(".overflow:nth-child(1) .title__text"),
-  document.querySelectorAll(".overflow:nth-child(2) .title__text"),
-  document.querySelectorAll(".overflow:nth-child(3) .title__text"),
+  document.querySelectorAll(".skill__overflow:nth-child(1) .title__text"),
+  document.querySelectorAll(".skill__overflow:nth-child(2) .title__text"),
+  document.querySelectorAll(".skill__overflow:nth-child(3) .title__text"),
 ];
 
 characters.forEach((e, index) => {

@@ -154,9 +154,9 @@ Site by dvasadva.com 🥰
         </ul>
       </nav>
     </header>
-    <section class="first">
-      <div>
-        <div class="overflow">
+    <section class="skill">
+      <div class="skill__item">
+        <div class="skill__overflow">
           <h1 class="title__text">K</h1>
           <h1 class="title__text">u</h1>
           <h1 class="title__text">k</h1>
@@ -168,7 +168,7 @@ Site by dvasadva.com 🥰
           <h1 class="title__text">D</h1>
           <h1 class="title__text">o</h1>
         </div>
-        <div class="overflow">
+        <div class="skill__overflow">
           <h1 class="title__text">k</h1>
           <h1 class="title__text">o</h1>
           <h1 class="title__text">r</h1>
@@ -188,7 +188,7 @@ Site by dvasadva.com 🥰
           <h1 class="title__text">k</h1>
           <h1 class="title__text">a</h1>
         </div>
-        <div class="overflow title__text--accent">
+        <div class="skill__overflow title__text--accent">
           <h1 class="title__text">v</h1>
           <h1 class="title__text">j</h1>
           <h1 class="title__text">e</h1>
@@ -199,21 +199,23 @@ Site by dvasadva.com 🥰
           <h1 class="title__text">a</h1>
         </div>
       </div>
-      <div>
-        <img class="first__img" src="img/hero.jpg" alt="hero" loading="lazy" />
+      <div class="skill__item">
+        <img class="skill__img" src="img/hero.jpg" alt="hero">
       </div>
     </section>
-    <section class="second fade">
-      <div class="second__one">
+    <section class="hard fade">
+      <div class="hard__item">
         <p>
           <span class="link__text"><a href="/vjestina/">O vještini</a></span>
           <span class="accent__text">Znamo da je teško.</span>
         </p>
       </div>
-      <p>Jer bit će teško.<br>
-        Teško je napraviti promjenu, pokrenuti se.<br>
-        Teško je mijenjati navike, ići protiv sebe, kako bi napravili nešto za sebe.
-      </p>
+      <div class="hard__item">
+        <p>Jer bit će teško.<br>
+          Teško je napraviti promjenu, pokrenuti se.<br>
+          Teško je mijenjati navike, ići protiv sebe, kako bi napravili nešto za sebe.
+        </p>
+      </div>
     </section>
     <section class="glitch fade">
       <img src="img/bow.jpg" alt="bow" loading="lazy" />
@@ -658,8 +660,8 @@ Site by dvasadva.com 🥰
           V507.94z M638.5,521.58h7.56c2.75,0,5.22-0.9,5.22-4.23c0-3.28-2.03-4.59-5.09-4.59h-7.69V521.58z" />
       </svg>
     </section>
-    <section class="fifth fade">
-      <div class="fifth__one">
+    <section class="legacy fade">
+      <div class="legacy__one">
         <span class="link__text"><a href="/pristup/">Naš pristup</a></span>
         <p>
           17 godina prakticiranja tradicionalne korejske borilačke vještine Kuk Sul Do.
@@ -667,7 +669,7 @@ Site by dvasadva.com 🥰
           Jedina škola za prakticiranje Kuk Sula u Hrvatskoj i istočnoj Europi.
         </p>
       </div>
-      <div class="fifth__two">
+      <div class="legacy__two">
         <p>
           Kuk Sul Do je vrlo opsežna vještina. Jedan besplatan trening nije ti dovoljan. Vjeruj nam.
           Stoga svakom novom članu poklanjamo mjesec dana treninga.
@@ -780,7 +782,7 @@ Site by dvasadva.com 🥰
               <label><span>Email</span></label>
             </div>
             <div class="form-entry">
-              <textarea name="message" placeholder="&nbsp;" required></textarea>
+              <input name="message" placeholder="&nbsp;" required></input>
               <label><span>Poruka</span></label>
             </div>
             <button type="submit">Šalji</button>

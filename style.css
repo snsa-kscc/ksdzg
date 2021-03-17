@@ -203,10 +203,8 @@ nav li + li {
   padding-left: 5em;
 }
 
-@media (max-width: 750px) {
-  nav {
-    display: none;
-  }
+nav {
+  display: none;
 }
 
 .skill {

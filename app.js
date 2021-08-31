@@ -173,7 +173,7 @@ testForm.addEventListener("submit", (e) => {
 //   }, 5000);
 // });
 
-//// funkcionalnost za top za navbar
+// funkcionalnost za top za navbar
 
 locoScroll.on("scroll", () => {
   if (locoScroll.scroll.instance.scroll.y <= 10) {

@@ -34,6 +34,10 @@ svg {
   overflow: auto;
 }
 
+.overflow--hidden {
+  overflow: hidden;
+}
+
 html {
   font-size: 62.5%;
   overflow: hidden;
@@ -216,8 +220,49 @@ nav {
   margin-top: 3em;
 }
 
+.skill--spacy {
+  margin-top: 8em;
+}
+
 .skill__item {
   flex: 1 1 35rem;
+}
+
+.skill__item--wide {
+  flex: 2 1 35rem;
+  margin: 3em;
+}
+
+.skill__copy-group {
+  display: flex;
+  gap: 3em;
+  margin-top: 5em;
+}
+
+.skill__copy-item {
+  flex: 1 1 50%;
+}
+
+.skill__overflow {
+  display: flex;
+  transform: translateX(22%);
+  overflow-y: hidden;
+}
+
+.skill__img {
+  height: 70vmin;
+  object-fit: cover;
+  object-position: left;
+}
+
+.skill__img--filter {
+  filter: brightness(70%) sepia(70%);
+}
+
+@media (max-width: 600px) {
+  .skill__copy-group {
+    flex-wrap: wrap;
+  }
 }
 
 .title__text {
@@ -239,16 +284,8 @@ nav {
   color: var(--secondary-color);
 }
 
-.skill__overflow {
-  display: flex;
-  transform: translateX(22%);
-  overflow-y: hidden;
-}
-
-.skill__img {
-  height: 70vmin;
-  object-fit: cover;
-  object-position: left;
+.title__text--right {
+  text-align: right;
 }
 
 .hard {
@@ -520,4 +557,9 @@ textarea:not(:placeholder-shown) + label::after {
 .show {
   transform: translateY(0%);
   opacity: 1;
+}
+
+.full-page {
+  height: 100vh;
+  margin-top: 10em;
 }

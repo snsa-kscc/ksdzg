@@ -1,9 +1,9 @@
+gsap.registerPlugin(ScrollTrigger);
+
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
 });
-
-//
 
 locoScroll.on("scroll", ScrollTrigger.update);
 

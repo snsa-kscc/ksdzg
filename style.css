@@ -257,6 +257,11 @@ nav {
 
 .skill__img--filter {
   filter: brightness(70%) sepia(70%);
+  transition: all 0.3s ease-in;
+}
+
+.skill__img--filter:hover {
+  filter: brightness(80%) sepia(40%);
 }
 
 @media (max-width: 600px) {
@@ -278,6 +283,10 @@ nav {
   text-align: center;
   margin: 0 5%;
   -webkit-text-stroke: 1px var(--accent-color);
+}
+
+.title__text--big {
+  font-size: clamp(4rem, 10vw, 13rem);
 }
 
 .title__text--accent {
@@ -562,4 +571,13 @@ textarea:not(:placeholder-shown) + label::after {
 .full-page {
   height: 100vh;
   margin-top: 10em;
+}
+
+.wrap {
+  margin: 8em;
+  text-align: center;
+}
+
+.wrap h1 {
+  margin: 0.9em auto;
 }

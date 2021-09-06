@@ -107,12 +107,10 @@ ScrollTrigger.create({
 // });
 
 const observableItems = document.querySelectorAll(".fade");
-
 const options = {
   threshold: 0,
   rootMargin: "0px 0px -25% 0px",
 };
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.intersectionRatio > 0) {

@@ -30,6 +30,23 @@ svg {
   display: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0.5em;
+}
+
+.copy {
+  font-size: clamp(2.5rem, 3.5vw, 5rem);
+  font-weight: 700;
+  display: block;
+  line-height: 1.5em;
+}
+
 .overflow--reset {
   overflow: auto;
 }
@@ -414,6 +431,58 @@ nav {
   opacity: 0;
 }
 
+.section-spacing {
+  margin: 12em 2em;
+}
+
+.translation__group {
+  text-align: center;
+}
+
+.skill-features__title {
+  width: 60%;
+}
+
+@media (max-width: 768px) {
+  .skill-features__title {
+    width: auto;
+  }
+}
+
+.skill-features__list {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 4em;
+  column-gap: 1em;
+  margin: 7em;
+}
+
+.skill-features__item-1 {
+  grid-column: 2 / span 4;
+}
+
+.skill-features__item-2 {
+  grid-column: 8 / span 4;
+}
+
+.skill-features__item-3 {
+  grid-column: 4 / span 4;
+  grid-row: 2;
+}
+
+.skill-features__item-4 {
+  grid-column: 10 / span 4;
+  grid-row: 2;
+}
+
+.skill-features__item-5 {
+  grid-column: 7 / span 4;
+  grid-row: 3;
+}
+
 /* forma početak */
 
 footer {
@@ -570,7 +639,6 @@ textarea:not(:placeholder-shown) + label::after {
 
 .full-page {
   height: 100vh;
-  margin-top: 10em;
 }
 
 .wrap {

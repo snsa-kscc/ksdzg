@@ -36,17 +36,35 @@ let tl = gsap.timeline({
 //   tl.to(panel, { x: (i + 1) * -145 });
 // });
 
-tl.from(".scrol1", { x: -85 });
-tl.from(".scrol2", { x: 105 }, 0);
-tl.from(".scrol3", { x: -145 }, 0);
+tl.from(".translation__item-1", { x: -85 });
+tl.from(".translation__item-2", { x: 105 }, 0);
+tl.from(".translation__item-3", { x: -145 }, 0);
 
 ScrollTrigger.create({
-  trigger: ".scrol1",
+  trigger: ".translation__item-1",
   start: "top 75%",
   end: "top 30%",
   scroller: "[data-scroll-container]",
   scrub: true,
   animation: tl,
+});
+
+const observableItems = document.querySelectorAll(".fade");
+const options = {
+  threshold: 0,
+  rootMargin: "0px 0px -25% 0px",
+};
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0) {
+      entry.target.classList.add("fade-in");
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+observableItems.forEach((item) => {
+  observer.observe(item);
 });
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());

@@ -1,3 +1,4 @@
+gsap.registerPlugin(CSSRulePlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 const locoScroll = new LocomotiveScroll({
@@ -26,6 +27,7 @@ ScrollTrigger.scrollerProxy("[data-scroll-container]", {
     : "fixed",
 });
 
+const rule = CSSRulePlugin.getRule(".skill-features__item::after");
 let tl = gsap.timeline({
   defaults: {
     opacity: 0,
@@ -47,6 +49,18 @@ ScrollTrigger.create({
   scroller: "[data-scroll-container]",
   scrub: true,
   animation: tl,
+});
+
+gsap.to(rule, {
+  scrollTrigger: {
+    trigger: ".skill-features__item",
+    scroller: "[data-scroll-container]",
+    start: "top 60%",
+  },
+  cssRule: {
+    scaleY: 0,
+  },
+  duration: 1,
 });
 
 const observableItems = document.querySelectorAll(".fade");

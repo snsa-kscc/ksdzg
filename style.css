@@ -13,7 +13,9 @@
   --tertiary-color: #8be8d2;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -45,6 +47,11 @@ p {
   font-weight: 700;
   display: block;
   line-height: 1.5em;
+}
+
+.copy--features {
+  color: var(--tertiary-color);
+  font-size: clamp(1.7rem, 3.2vw, 3rem);
 }
 
 .overflow--reset {
@@ -457,7 +464,22 @@ nav {
   grid-template-rows: repeat(3, 1fr);
   row-gap: 4em;
   column-gap: 1em;
-  margin: 7em;
+  margin: clamp(3em, 6vw, 5em) auto;
+}
+
+.skill-features__item {
+  position: relative;
+}
+
+.skill-features__item::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-bg-color);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform-origin: 100% 0;
 }
 
 .skill-features__item-1 {

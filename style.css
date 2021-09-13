@@ -49,9 +49,16 @@ p {
   line-height: 1.5em;
 }
 
-.copy--features {
+.copy--accent-big {
   color: var(--tertiary-color);
   font-size: clamp(1.7rem, 3.2vw, 3rem);
+  text-align: center;
+}
+
+.copy--accent-small {
+  color: var(--tertiary-color);
+  font-size: clamp(1.8rem, 2.8vw, 2.2rem);
+  text-align: center;
 }
 
 .overflow--reset {
@@ -81,6 +88,7 @@ body {
 
 main {
   max-width: 192rem;
+  margin: 0 auto;
 }
 
 .st0 {
@@ -503,6 +511,46 @@ nav {
 .skill-features__item-5 {
   grid-column: 7 / span 4;
   grid-row: 3;
+}
+
+.explainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.explainer__group-1 {
+  flex: 2 1 40rem;
+}
+
+.explainer__group-2 {
+  flex: 1 1 50%;
+}
+
+.technique {
+}
+
+.technique__group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 5em;
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 330px) {
+  .technique__group {
+    grid-template-columns: 1fr;
+  }
+}
+
+.technique__card {
+  border-radius: 10%;
+  box-shadow: 15px 15px 19px #08090c, -15px -15px 19px #171b24;
+  padding: 2em;
+  aspect-ratio: 1;
 }
 
 /* forma početak */

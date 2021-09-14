@@ -547,10 +547,16 @@ nav {
 }
 
 .technique__card {
+  display: grid;
+  min-height: 38rem;
   border-radius: 10%;
   box-shadow: 15px 15px 19px #08090c, -15px -15px 19px #171b24;
   padding: 2em;
-  aspect-ratio: 1;
+}
+
+.technique__description {
+  font-size: 1.8rem;
+  line-height: 1.5;
 }
 
 /* forma početak */

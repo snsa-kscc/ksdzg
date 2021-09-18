@@ -725,3 +725,34 @@ textarea:not(:placeholder-shown) + label::after {
 .wrap h1 {
   margin: 0.9em auto;
 }
+
+.accordion__group {
+  margin: 5em 0;
+}
+
+.accordion__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordion__title-item {
+  flex-basis: 75%;
+}
+
+.accordion__svg {
+  width: 10%;
+  transition: all 0.5s ease-out;
+}
+
+.accordion__svg--rotated {
+  transform: rotate(90deg);
+}
+
+.accordion__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}

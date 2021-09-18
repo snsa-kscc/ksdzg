@@ -1,9 +1,9 @@
+gsap.registerPlugin(ScrollTrigger);
+
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
 });
-
-//
 
 locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -29,45 +29,71 @@ ScrollTrigger.scrollerProxy("[data-scroll-container]", {
 //
 
 let characters = [
-  document.querySelectorAll(".overflow:nth-child(1) .title__text"),
-  document.querySelectorAll(".overflow:nth-child(2) .title__text"),
-  document.querySelectorAll(".overflow:nth-child(3) .title__text"),
+  document.querySelectorAll(".skill__overflow:nth-child(1) .title__text"),
+  document.querySelectorAll(".skill__overflow:nth-child(2) .title__text"),
+  document.querySelectorAll(".skill__overflow:nth-child(3) .title__text"),
 ];
 
 characters.forEach((e, index) => {
   gsap.to(e, 0, { y: 160 });
 });
 
-document.querySelector("html").classList.add("overflow--reset");
-document.querySelector("body").classList.add("overflow--reset");
-animateUpCharacter();
+gsap.from(".svg__line--black", {
+  duration: 2,
+  opacity: 0,
+  delay: 1,
+  stagger: 1.3,
+});
+gsap.to(".loader", {
+  delay: 4,
+  duration: 1.7,
+  top: "-100%",
+  ease: Expo.easeInOut,
+  onComplete: () => {
+    document.querySelector("html").classList.add("overflow--reset");
+    document.querySelector("body").classList.add("overflow--reset");
+    animateUpCharacter();
+  },
+});
 
 function animateUpCharacter() {
-  characters[0].forEach((e, index) => {
-    // gsap.to(e, 0, { y: 105 });
-    gsap.to(e, 0.3, {
-      y: 0,
-      delay: 0.03 * index,
-      ease: "power1.out",
-    });
-  });
-  characters[1].forEach((e, index) => {
-    // gsap.to(e, 0, { y: 105 });
-    gsap.to(e, 0.4, {
-      y: 0,
-      delay: 0.04 * index,
-      ease: "power1.out",
-    });
-  });
-  characters[2].forEach((e, index) => {
-    // gsap.to(e, 0, { y: 105 });
-    gsap.to(e, 0.4, {
-      y: 0,
-      delay: 0.04 * index,
-      ease: "power1.out",
+  characters.forEach((character) => {
+    character.forEach((element, index) => {
+      gsap.to(element, 0.3, {
+        y: 0,
+        delay: 0.03 * index,
+        ease: "power1.out",
+      });
     });
   });
 }
+
+// function animateUpCharacter() {
+//   characters[0].forEach((e, index) => {
+//     // gsap.to(e, 0, { y: 105 });
+//     gsap.to(e, 0.3, {
+//       y: 0,
+//       delay: 0.03 * index,
+//       ease: "power1.out",
+//     });
+//   });
+//   characters[1].forEach((e, index) => {
+//     // gsap.to(e, 0, { y: 105 });
+//     gsap.to(e, 0.4, {
+//       y: 0,
+//       delay: 0.04 * index,
+//       ease: "power1.out",
+//     });
+//   });
+//   characters[2].forEach((e, index) => {
+//     // gsap.to(e, 0, { y: 105 });
+//     gsap.to(e, 0.4, {
+//       y: 0,
+//       delay: 0.04 * index,
+//       ease: "power1.out",
+//     });
+//   });
+// }
 
 // gsap.set(".logotip__ksd", { svgOrigin: "842 595" });
 let tl = gsap.to(".logotip__ksd", { scale: 0.8, opacity: 1 });
@@ -93,12 +119,10 @@ ScrollTrigger.create({
 // });
 
 const observableItems = document.querySelectorAll(".fade");
-
 const options = {
   threshold: 0,
   rootMargin: "0px 0px -25% 0px",
 };
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.intersectionRatio > 0) {
@@ -159,7 +183,7 @@ testForm.addEventListener("submit", (e) => {
 //   }, 5000);
 // });
 
-//// funkcionalnost za top za navbar
+// funkcionalnost za top za navbar
 
 locoScroll.on("scroll", () => {
   if (locoScroll.scroll.instance.scroll.y <= 10) {

@@ -34,20 +34,12 @@ gsap.to(rule, {
     trigger: ".test",
     scroller: "[data-scroll-container]",
     start: "top 20%",
+    toggleClass: { targets: ".group", className: "show" },
   },
   cssRule: {
     scaleY: 0,
   },
   duration: 1,
-});
-
-ScrollTrigger.create({
-  trigger: ".test",
-  scroller: "[data-scroll-container]",
-  start: "top 20%",
-  onEnter: () => {
-    group.classList.add("show");
-  },
 });
 
 const observableItems = document.querySelectorAll(".fade");

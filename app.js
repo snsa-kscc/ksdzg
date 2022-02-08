@@ -9,9 +9,7 @@ locoScroll.on("scroll", ScrollTrigger.update);
 
 ScrollTrigger.scrollerProxy("[data-scroll-container]", {
   scrollTop(value) {
-    return arguments.length
-      ? locoScroll.scrollTo(value, 0, 0)
-      : locoScroll.scroll.instance.scroll.y;
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
   },
   getBoundingClientRect() {
     return {
@@ -21,9 +19,7 @@ ScrollTrigger.scrollerProxy("[data-scroll-container]", {
       height: window.innerHeight,
     };
   },
-  pinType: document.querySelector("[data-scroll-container]").style.transform
-    ? "transform"
-    : "fixed",
+  pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed",
 });
 
 //
@@ -34,7 +30,7 @@ let characters = [
   document.querySelectorAll(".skill__overflow:nth-child(3) .title__text"),
 ];
 
-characters.forEach((e, index) => {
+characters.forEach((e) => {
   gsap.to(e, 0, { y: 160 });
 });
 

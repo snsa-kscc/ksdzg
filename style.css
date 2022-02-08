@@ -7,10 +7,10 @@
 */
 
 :root {
-  --main-bg-color: #0f1218;
-  --accent-color: #cecece;
-  --secondary-color: #ca3434;
-  --tertiary-color: #8be8d2;
+  --main-bg-color: hsl(220, 23%, 8%);
+  --accent-color: hsl(0, 0%, 81%);
+  --secondary-color: hsl(0, 59%, 50%);
+  --tertiary-color: hsl(166, 67%, 73%);
 }
 
 *,

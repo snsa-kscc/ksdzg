@@ -239,10 +239,6 @@ nav li + li {
   padding-left: 5em;
 }
 
-nav {
-  display: none;
-}
-
 .skill {
   display: flex;
   flex-wrap: wrap;

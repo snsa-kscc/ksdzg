@@ -1,28 +1,10 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector("[data-scroll-container]"),
-  smooth: true,
+ScrollSmoother.create({
+  smooth: 1.2,
+  effects: true,
+  smoothTouch: 0.000001,
 });
-
-locoScroll.on("scroll", ScrollTrigger.update);
-
-ScrollTrigger.scrollerProxy("[data-scroll-container]", {
-  scrollTop(value) {
-    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-  },
-  getBoundingClientRect() {
-    return {
-      top: 0,
-      left: 0,
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-  },
-  pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed",
-});
-
-//
 
 let characters = [
   document.querySelectorAll(".skill__overflow:nth-child(1) .title__text"),
@@ -40,6 +22,7 @@ gsap.from(".svg__line--black", {
   delay: 1,
   stagger: 1.3,
 });
+
 gsap.to(".loader", {
   delay: 4,
   duration: 1.7,
@@ -54,7 +37,6 @@ gsap.to(".loader", {
 
 function animateUpCharacter() {
   characters[0].forEach((e, index) => {
-    // gsap.to(e, 0, { y: 105 });
     gsap.to(e, 0.3, {
       y: 0,
       delay: 0.03 * index,
@@ -62,7 +44,6 @@ function animateUpCharacter() {
     });
   });
   characters[1].forEach((e, index) => {
-    // gsap.to(e, 0, { y: 105 });
     gsap.to(e, 0.4, {
       y: 0,
       delay: 0.04 * index,
@@ -70,7 +51,6 @@ function animateUpCharacter() {
     });
   });
   characters[2].forEach((e, index) => {
-    // gsap.to(e, 0, { y: 105 });
     gsap.to(e, 0.4, {
       y: 0,
       delay: 0.04 * index,
@@ -79,28 +59,16 @@ function animateUpCharacter() {
   });
 }
 
-// gsap.set(".logotip__ksd", { svgOrigin: "842 595" });
 let tl = gsap.to(".logotip__ksd", { scale: 0.8, opacity: 1 });
 
 ScrollTrigger.create({
   trigger: ".fourth",
   start: "50% 50%",
   end: () => `+=${document.querySelector(".fourth").offsetWidth}`,
-  scroller: "[data-scroll-container]",
   animation: tl,
   scrub: true,
   pin: true,
 });
-
-// gsap.to(".fade-in", {
-//   scrollTrigger: {
-//     trigger: ".fade-in",
-//     scroller: "[data-scroll-container]",
-//     start: "1px 85%",
-//   },
-//   opacity: 1,
-//   duration: 1,
-// });
 
 const observableItems = document.querySelectorAll(".fade");
 const options = {
@@ -119,13 +87,6 @@ const observer = new IntersectionObserver((entries) => {
 observableItems.forEach((item) => {
   observer.observe(item);
 });
-
-//
-
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.refresh();
-
-//
 
 // skrol do vrha
 
@@ -157,24 +118,4 @@ testForm.addEventListener("submit", (e) => {
       }, 5000);
     }
   });
-});
-
-// const btn = document.querySelector(".testni");
-// btn.addEventListener("click", () => {
-//   document.querySelector(".confirmation").classList.add("show");
-//   setTimeout(() => {
-//     document.querySelector(".confirmation").classList.remove("show");
-//   }, 5000);
-// });
-
-// funkcionalnost za top za navbar
-
-locoScroll.on("scroll", () => {
-  if (locoScroll.scroll.instance.scroll.y <= 10) {
-    document.querySelector("nav").classList.add("fade-in");
-    document.querySelector("nav").classList.remove("fade-out");
-  } else {
-    document.querySelector("nav").classList.add("fade-out");
-    document.querySelector("nav").classList.remove("fade-in");
-  }
 });

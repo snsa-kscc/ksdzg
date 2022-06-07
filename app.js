@@ -13,7 +13,7 @@ let characters = [
 ];
 
 characters.forEach((e) => {
-  gsap.to(e, 0, { y: 160 });
+  gsap.to(e, { y: 160 });
 });
 
 gsap.from(".svg__line--black", {
@@ -27,7 +27,7 @@ gsap.to(".loader", {
   delay: 4,
   duration: 1.7,
   top: "-100%",
-  ease: Expo.easeInOut,
+  ease: "expo.inOut",
   onComplete: () => {
     document.querySelector("html").classList.add("overflow--reset");
     document.querySelector("body").classList.add("overflow--reset");
@@ -35,29 +35,19 @@ gsap.to(".loader", {
   },
 });
 
-function animateUpCharacter() {
-  characters[0].forEach((e, index) => {
-    gsap.to(e, 0.3, {
-      y: 0,
-      delay: 0.03 * index,
-      ease: "power1.out",
-    });
+const animateUpCharacter = () => {
+  characters.forEach((character, idx) => {
+    setTimeout(() => {
+      character.forEach((e, i) => {
+        gsap.to(e, {
+          y: 0,
+          delay: 0.05 * i,
+          ease: "power1.out",
+        });
+      });
+    }, 300 * idx);
   });
-  characters[1].forEach((e, index) => {
-    gsap.to(e, 0.4, {
-      y: 0,
-      delay: 0.04 * index,
-      ease: "power1.out",
-    });
-  });
-  characters[2].forEach((e, index) => {
-    gsap.to(e, 0.4, {
-      y: 0,
-      delay: 0.04 * index,
-      ease: "power1.out",
-    });
-  });
-}
+};
 
 let tl = gsap.to(".logotip__ksd", { scale: 0.8, opacity: 1 });
 

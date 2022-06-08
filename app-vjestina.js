@@ -1,30 +1,9 @@
-gsap.registerPlugin(CSSRulePlugin);
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, ScrollSmoother);
 
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector("[data-scroll-container]"),
-  smooth: true,
-});
-
-locoScroll.on("scroll", ScrollTrigger.update);
-
-ScrollTrigger.scrollerProxy("[data-scroll-container]", {
-  scrollTop(value) {
-    return arguments.length
-      ? locoScroll.scrollTo(value, 0, 0)
-      : locoScroll.scroll.instance.scroll.y;
-  },
-  getBoundingClientRect() {
-    return {
-      top: 0,
-      left: 0,
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-  },
-  pinType: document.querySelector("[data-scroll-container]").style.transform
-    ? "transform"
-    : "fixed",
+ScrollSmoother.create({
+  smooth: 1.2,
+  effects: true,
+  smoothTouch: 0.000001,
 });
 
 const rule = CSSRulePlugin.getRule(".skill-features__item::after");
@@ -34,19 +13,12 @@ let tl = gsap.timeline({
   },
 });
 
-// gsap.utils.toArray(".wrap h1").forEach((panel, i) => {
-//   tl.to(panel, { x: (i + 1) * -145 });
-// });
-
-tl.from(".translation__item-1", { x: -85 });
-tl.from(".translation__item-2", { x: 105 }, 0);
-tl.from(".translation__item-3", { x: -145 }, 0);
+tl.from(".translation__item-1", { x: -85 }).from(".translation__item-2", { x: 105 }, 0).from(".translation__item-3", { x: -145 }, 0);
 
 ScrollTrigger.create({
   trigger: ".translation__item-1",
   start: "top 75%",
   end: "top 30%",
-  scroller: "[data-scroll-container]",
   scrub: true,
   animation: tl,
 });
@@ -54,7 +26,6 @@ ScrollTrigger.create({
 gsap.to(rule, {
   scrollTrigger: {
     trigger: ".skill-features__item",
-    scroller: "[data-scroll-container]",
     start: "top 60%",
   },
   cssRule: {
@@ -81,23 +52,34 @@ observableItems.forEach((item) => {
   observer.observe(item);
 });
 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.refresh();
-
 // skrol do vrha
 
 window.addEventListener("unload", () => {
   window.scrollTo(0, 0);
 });
 
-// funkcionalnost za top za navbar
+const menuTl = gsap.timeline({
+  paused: true,
+});
 
-locoScroll.on("scroll", () => {
-  if (locoScroll.scroll.instance.scroll.y <= 10) {
-    document.querySelector("nav").classList.add("fade-in");
-    document.querySelector("nav").classList.remove("fade-out");
-  } else {
-    document.querySelector("nav").classList.add("fade-out");
-    document.querySelector("nav").classList.remove("fade-in");
-  }
+menuTl.to(".nav-container", {
+  x: 0,
+  duration: 1,
+  ease: "expo.inOut",
+});
+
+menuTl.reverse();
+
+const navOpen = document.querySelector(".nav-open");
+const navClose = document.querySelector(".nav-close");
+
+navOpen.addEventListener("click", () => {
+  //menuTl.reversed(!t1.reversed());
+  menuTl.play();
+  document.querySelector("body").classList.toggle("overflow--hidden");
+});
+navClose.addEventListener("click", () => {
+  //menuTl.reversed(!t1.reversed());
+  menuTl.reverse();
+  document.querySelector("body").classList.toggle("overflow--hidden");
 });

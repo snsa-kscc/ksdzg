@@ -21,6 +21,18 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  font-size: clamp(1.6rem, 4.2vw, 2.2rem);
+  line-height: 1.6em;
+  color: var(--accent-color);
+  background: var(--main-bg-color);
+}
+
 img,
 svg {
   display: block;
@@ -42,6 +54,10 @@ p {
   margin-bottom: 0.5em;
 }
 
+ul {
+  list-style: none;
+}
+
 .copy {
   font-size: clamp(2.5rem, 3.5vw, 5rem);
   font-weight: 700;
@@ -61,34 +77,14 @@ p {
   text-align: center;
 }
 
-.overflow--reset {
-  overflow: auto;
-}
-
 .overflow--hidden {
   overflow: hidden;
 }
 
-html {
-  font-size: 62.5%;
-  overflow: hidden;
-}
-
-body {
-  overflow: hidden;
-  font-family: "Titillium Web", sans-serif;
-  font-size: clamp(1.6rem, 4.2vw, 2.2rem);
-  line-height: 1.6em;
-  color: var(--accent-color);
-  background: var(--main-bg-color);
-  /* background-image: var(--gradient);
-  background-size: 200%; */
-  height: 100%;
-}
-
 main {
   max-width: 192rem;
-  margin: 0 auto;
+  padding: 5em 0 0;
+  overflow-x: hidden;
 }
 
 .st0 {
@@ -143,10 +139,6 @@ main {
   fill: var(--tertiary-color);
 }
 
-[data-scroll-container] {
-  overflow-x: hidden;
-}
-
 .fade {
   opacity: 0;
 }
@@ -167,7 +159,7 @@ main {
   height: 100vh;
   width: 100vw;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -222,21 +214,39 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.5em;
   font-size: 0.5em;
-  height: 15vh;
-  padding: 0 4em 0 0;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  padding: 0 5%;
+  background: var(--main-bg-color);
 }
 
 .logo {
   max-width: 11em;
 }
 
-nav ul {
+.nav-container {
+  position: absolute;
+  inset: 0;
+  height: 100vh;
+  z-index: 2;
   display: flex;
-  list-style-type: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--accent-color);
+  transform: translateX(-100%);
 }
 
-nav li + li {
-  padding-left: 5em;
+.nav-open,
+.nav-close {
+  cursor: pointer;
+}
+
+.nav-container,
+.nav-container a {
+  color: var(--main-bg-color);
 }
 
 .skill {
@@ -561,7 +571,6 @@ footer {
   gap: 2em;
   padding-bottom: 3em;
   position: relative;
-  overflow: hidden;
 }
 
 footer > div:first-child {

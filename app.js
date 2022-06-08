@@ -26,19 +26,18 @@ gsap.from(".svg__line--black", {
 gsap.to(".loader", {
   delay: 4,
   duration: 1.7,
-  top: "-100%",
+  y: "-100%",
   ease: "expo.inOut",
   onComplete: () => {
-    document.querySelector("html").classList.add("overflow--reset");
-    document.querySelector("body").classList.add("overflow--reset");
+    document.querySelector("body").classList.toggle("overflow--hidden");
     animateUpCharacter();
   },
 });
 
 const animateUpCharacter = () => {
-  characters.forEach((character, idx) => {
+  characters.forEach((line, idx) => {
     setTimeout(() => {
-      character.forEach((e, i) => {
+      line.forEach((e, i) => {
         gsap.to(e, {
           y: 0,
           delay: 0.05 * i,
@@ -48,6 +47,32 @@ const animateUpCharacter = () => {
     }, 300 * idx);
   });
 };
+
+const menuTl = gsap.timeline({
+  paused: true,
+});
+
+menuTl.to(".nav-container", {
+  x: 0,
+  duration: 1,
+  ease: "expo.inOut",
+});
+
+menuTl.reverse();
+
+const navOpen = document.querySelector(".nav-open");
+const navClose = document.querySelector(".nav-close");
+
+navOpen.addEventListener("click", () => {
+  //menuTl.reversed(!t1.reversed());
+  menuTl.play();
+  document.querySelector("body").classList.toggle("overflow--hidden");
+});
+navClose.addEventListener("click", () => {
+  //menuTl.reversed(!t1.reversed());
+  menuTl.reverse();
+  document.querySelector("body").classList.toggle("overflow--hidden");
+});
 
 let tl = gsap.to(".logotip__ksd", { scale: 0.8, opacity: 1 });
 
@@ -65,6 +90,7 @@ const options = {
   threshold: 0,
   rootMargin: "0px 0px -25% 0px",
 };
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.intersectionRatio > 0) {
@@ -108,4 +134,10 @@ testForm.addEventListener("submit", (e) => {
       }, 5000);
     }
   });
+});
+
+document.querySelector("body").classList.add("overflow--hidden");
+
+document.querySelector(".loader").addEventListener("touchmove", (e) => {
+  e.preventDefault();
 });

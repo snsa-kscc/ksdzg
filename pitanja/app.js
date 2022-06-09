@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 ScrollSmoother.create({
   smooth: 1.2,
   effects: true,
-  smoothTouch: 0.000001,
+  // smoothTouch: 0.000001,
 });
 
 let accordion = document.querySelectorAll(".accordion__title");

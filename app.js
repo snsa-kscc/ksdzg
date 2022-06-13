@@ -16,9 +16,9 @@ characters.forEach((e) => {
   gsap.to(e, { y: 160 });
 });
 
-gsap.from(".svg__line--black", {
+gsap.to(".svg-line__black", {
   duration: 2,
-  opacity: 0,
+  opacity: 1,
   delay: 1,
   stagger: 1.3,
 });

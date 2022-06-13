@@ -6,13 +6,22 @@ ScrollSmoother.create({
   smoothTouch: 0.000001,
 });
 
-const rule = CSSRulePlugin.getRule(".wrapper::after");
+gsap.to(".approach-circle", {
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".approach-circle",
+    start: "top",
+  },
+});
+
+const rule = CSSRulePlugin.getRule(".approach-hero__img::after");
 
 gsap.to(rule, {
   scrollTrigger: {
-    trigger: ".test",
+    trigger: ".approach-hero",
     start: "top 20%",
-    toggleClass: { targets: ".group", className: "show" },
+    toggleClass: { targets: ".approach-hero__text", className: "show" },
+    once: true,
   },
   cssRule: {
     scaleY: 0,

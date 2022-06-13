@@ -649,7 +649,7 @@ footer > div {
 }
 
 .circle + div {
-  margin-left: 2em;
+  margin: 2em;
 }
 
 .form {
@@ -796,6 +796,12 @@ textarea:not(:placeholder-shown) + label::after {
   perspective: 140rem;
 }
 
+@media (max-width: 790px) {
+  .approach-hero {
+    display: block;
+  }
+}
+
 .approach-hero__img {
   grid-row: 1 / 2;
   grid-column: 1 / 5;
@@ -816,6 +822,7 @@ textarea:not(:placeholder-shown) + label::after {
 .approach-hero__text {
   grid-row: 1 / 2;
   grid-column: 4 / -1;
+  margin: 2em 1em;
   opacity: 0;
   transform-origin: center top;
   transform-style: preserve-3d;
@@ -828,9 +835,20 @@ textarea:not(:placeholder-shown) + label::after {
   transform: none;
 }
 
-.approach-circle {
+.approach-intro {
   display: flex;
-  justify-content: center;
-  align-items: end;
-  height: 30vh;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  min-height: 40vh;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.approach-intro.show {
+  opacity: 1;
+}
+
+.arrow-icon {
+  max-width: 4em;
 }

@@ -3,14 +3,20 @@ gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, ScrollSmoother);
 ScrollSmoother.create({
   smooth: 1.2,
   effects: true,
-  smoothTouch: 0.000001,
 });
 
-gsap.to(".approach-circle", {
-  opacity: 0,
+document.querySelector(".approach-intro").classList.add("show");
+
+gsap.to(".approach-intro", {
   scrollTrigger: {
-    trigger: ".approach-circle",
-    start: "top",
+    trigger: ".approach-intro",
+    start: "top 5%",
+    onEnter: () => {
+      document.querySelector(".approach-intro").classList.remove("show");
+    },
+    onEnterBack: () => {
+      document.querySelector(".approach-intro").classList.add("show");
+    },
   },
 });
 
@@ -20,8 +26,11 @@ gsap.to(rule, {
   scrollTrigger: {
     trigger: ".approach-hero",
     start: "top 20%",
+    end: "bottom",
     toggleClass: { targets: ".approach-hero__text", className: "show" },
     once: true,
+    pin: true,
+    scrub: true,
   },
   cssRule: {
     scaleY: 0,

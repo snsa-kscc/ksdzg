@@ -930,3 +930,19 @@ textarea:not(:placeholder-shown) + label::after {
 }
 
 /* testiranje */
+
+.title__text--story {
+  position: relative;
+  color: var(--main-bg-color);
+  /* text-shadow: -3px -3px 0 #fff, 3px 3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff; */
+  font-size: 7em;
+  -webkit-text-stroke-width: 3px;
+}
+
+.title__text--story::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(315deg, var(--secondary-color), var(--tertiary-color));
+  inset: 0;
+  mix-blend-mode: darken;
+}

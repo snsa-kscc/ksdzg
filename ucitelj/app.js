@@ -1,10 +1,10 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-ScrollSmoother.create({
-  smooth: 1.2,
-  effects: true,
-  smoothTouch: 0.000001,
-});
+// ScrollSmoother.create({
+//   smooth: 1.2,
+//   effects: true,
+//   smoothTouch: 0.000001,
+// });
 
 // skrol do vrha
 
@@ -28,12 +28,10 @@ const navOpen = document.querySelector(".nav-open");
 const navClose = document.querySelector(".nav-close");
 
 navOpen.addEventListener("click", () => {
-  //menuTl.reversed(!t1.reversed());
   menuTl.play();
   document.querySelector("body").classList.toggle("overflow--hidden");
 });
 navClose.addEventListener("click", () => {
-  //menuTl.reversed(!t1.reversed());
   menuTl.reverse();
   document.querySelector("body").classList.toggle("overflow--hidden");
 });

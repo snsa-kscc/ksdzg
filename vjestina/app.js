@@ -52,7 +52,13 @@ observableItems.forEach((item) => {
   observer.observe(item);
 });
 
-// skrol do vrha
+const removeSkillFigureTransition = () => {
+  const skillFigure = document.querySelector(".skill__figure");
+  skillFigure.classList.remove("skill__figure");
+  window.removeEventListener("scroll", removeSkillFigureTransition);
+};
+
+window.addEventListener("scroll", removeSkillFigureTransition);
 
 window.addEventListener("unload", () => {
   window.scrollTo(0, 0);
@@ -74,12 +80,10 @@ const navOpen = document.querySelector(".nav-open");
 const navClose = document.querySelector(".nav-close");
 
 navOpen.addEventListener("click", () => {
-  //menuTl.reversed(!t1.reversed());
   menuTl.play();
   document.querySelector("body").classList.toggle("overflow--hidden");
 });
 navClose.addEventListener("click", () => {
-  //menuTl.reversed(!t1.reversed());
   menuTl.reverse();
   document.querySelector("body").classList.toggle("overflow--hidden");
 });

@@ -3,6 +3,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, ScrollSmoother);
 ScrollSmoother.create({
   smooth: 1.2,
   effects: true,
+  smoothTouch: 0.000001,
 });
 
 document.querySelector(".approach-intro").classList.add("show");
@@ -26,11 +27,14 @@ gsap.to(rule, {
   scrollTrigger: {
     trigger: ".approach-hero",
     start: "top 20%",
-    end: "bottom",
-    toggleClass: { targets: ".approach-hero__text", className: "show" },
-    once: true,
     pin: true,
     scrub: true,
+    onEnter: () => {
+      document.querySelector(".approach-hero__text").classList.add("show");
+    },
+    onLeaveBack: () => {
+      document.querySelector(".approach-hero__text").classList.remove("show");
+    },
   },
   cssRule: {
     scaleY: 0,
@@ -78,12 +82,10 @@ const navOpen = document.querySelector(".nav-open");
 const navClose = document.querySelector(".nav-close");
 
 navOpen.addEventListener("click", () => {
-  //menuTl.reversed(!t1.reversed());
   menuTl.play();
   document.querySelector("body").classList.toggle("overflow--hidden");
 });
 navClose.addEventListener("click", () => {
-  //menuTl.reversed(!t1.reversed());
   menuTl.reverse();
   document.querySelector("body").classList.toggle("overflow--hidden");
 });

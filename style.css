@@ -143,6 +143,12 @@ main {
   fill: var(--tertiary-color);
 }
 
+.svg-line__tertiary--stroke {
+  fill: none;
+  stroke: var(--tertiary-color);
+  stroke-width: 3;
+}
+
 .fade {
   opacity: 0;
 }
@@ -168,6 +174,10 @@ main {
   justify-content: center;
   align-items: center;
   background-color: var(--main-bg-color);
+}
+
+.slim {
+  padding: 0;
 }
 
 a {
@@ -218,12 +228,29 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.5em;
   font-size: 0.5em;
-  height: 10vh;
+  height: 7vh;
   width: 100%;
   position: fixed;
   z-index: 1;
   padding: 0 5%;
   background: var(--main-bg-color);
+}
+
+footer {
+  margin: 2em 0;
+  padding-bottom: 3em;
+}
+
+.wrap-404 {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 1fr auto;
+}
+
+.section-404 {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
 }
 
 .logo {
@@ -289,6 +316,10 @@ header {
   display: flex;
   transform: translateX(22%);
   overflow-y: hidden;
+}
+
+.skill__figure {
+  transition: all 0.5s ease-in-out;
 }
 
 .skill__img {
@@ -404,7 +435,7 @@ header {
   line-height: 1em;
 } */
 
-.third {
+.scarry {
   /* display: grid;
   grid-gap: 2em;
   grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
@@ -417,11 +448,11 @@ header {
   margin: 8em 5.5em 0;
 }
 
-.third > * {
+.scarry > * {
   margin-bottom: 1.7em;
 }
 
-.third p {
+.scarry p {
   font-size: clamp(1.2rem, 4vw, 2.2rem);
 }
 
@@ -474,6 +505,10 @@ header {
 
 .section-spacing {
   margin: 12em 2em;
+}
+
+.section-spacing--last {
+  margin-bottom: 0em;
 }
 
 .translation__group {
@@ -563,6 +598,11 @@ header {
   margin: 0 auto;
 }
 
+.technique__group--small {
+  max-width: 110rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+
 @media (max-width: 330px) {
   .technique__group {
     grid-template-columns: 1fr;
@@ -584,16 +624,15 @@ header {
 
 /* forma početak */
 
-footer {
+.info {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
-  padding-bottom: 3em;
   position: relative;
 }
 
-footer > div:first-child {
+.info > div:first-child {
   background: var(--tertiary-color);
   color: var(--main-bg-color);
   display: flex;
@@ -603,11 +642,11 @@ footer > div:first-child {
   padding-right: 1em;
 }
 
-footer > div:nth-child(2) {
+.info > div:nth-child(2) {
   background-color: var(--main-bg-color);
 }
 
-footer > div {
+.info > div {
   flex: 1 1 50rem;
   padding: 4em 0;
   gap: 2em;
@@ -745,10 +784,6 @@ textarea:not(:placeholder-shown) + label::after {
   opacity: 1;
 }
 
-.full-page {
-  height: 100vh;
-}
-
 .wrap {
   margin: 8em;
   text-align: center;
@@ -849,6 +884,49 @@ textarea:not(:placeholder-shown) + label::after {
   opacity: 1;
 }
 
+.approach-opportunity {
+  margin: 10em 2em;
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.approach-opportunity__group {
+  flex: 1 1 35rem;
+}
+
+.approach-opportunity__group--animation {
+  animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.approach-opportunity__group svg {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.approach-technique {
+  margin: 3em 2em;
+}
+
+.questions-hero {
+  height: 100vh;
+}
+
+.questions-hero img {
+  object-fit: cover;
+  object-position: center;
+}
+
 .arrow-icon {
   max-width: 4em;
 }
+
+/* testiranje */

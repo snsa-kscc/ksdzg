@@ -939,8 +939,12 @@ textarea:not(:placeholder-shown) + label::after {
   position: relative;
   color: var(--main-bg-color);
   /* text-shadow: -3px -3px 0 #fff, 3px 3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff; */
-  font-size: 7em;
-  -webkit-text-stroke-width: 3px;
+}
+
+@media (min-width: 790px) {
+  .title__text--story {
+    -webkit-text-stroke-width: 3px;
+  }
 }
 
 .title__text--story::after {

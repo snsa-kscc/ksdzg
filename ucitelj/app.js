@@ -1,10 +1,10 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-// ScrollSmoother.create({
-//   smooth: 1.2,
-//   effects: true,
-//   smoothTouch: 0.000001,
-// });
+ScrollSmoother.create({
+  smooth: 1.2,
+  effects: true,
+  smoothTouch: 0.000001,
+});
 
 // skrol do vrha
 

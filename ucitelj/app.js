@@ -12,6 +12,17 @@ window.addEventListener("unload", () => {
   window.scrollTo(0, 0);
 });
 
+let rule = CSSRulePlugin.getRule(".pain::after");
+
+gsap.to(rule, {
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".pain",
+    start: "top center",
+  },
+  cssRule: { scaleX: 0 },
+});
+
 const menuTl = gsap.timeline({
   paused: true,
 });

@@ -7,6 +7,7 @@
   <title>Učitelj - KukSulDoZg - come as you are</title>
   <meta name="title" content="Učitelj - KukSulDoZg - come as you are" />
   <meta name="description" content="Borilačka škola iz Koreje u Zagrebu." />
+  <script src="https://cdn.tailwindcss.com"></script> <!-- 2 DO: erase this!!!!! Tailwind CSS -->
   <link rel="stylesheet" href="../style.css" />
 </head>
 
@@ -94,10 +95,12 @@
     <div id="smooth-content" class="wrap-404 wrap-404--bg-color">
       <main>
         <section class="section-404">
-          <h2 class="title__text title__text--subhead title__text--story">Moja priča</h2>
           <h2 class="title__text title__text--subhead title__text--story">Od astme do ultre</h2>
         </section>
-        <section style="min-height: 100vh"></section>
+        <section class="flex">
+          <div class="flex-1"></div>
+          <div class="flex-1 pain"><img src="../img/pain.jpg" alt=""></div>
+        </section>
         <section>
           <p>Tvoj instruktor nije sportaš. Tvoj instruktor ne voli sport.</p>
           <p>
@@ -191,7 +194,6 @@
           <p style="margin-top: 3em;">Sve Zbog Kuk Sula. Sve za Kuk Sul.</p>
           <p style="margin-top: 3em;">Veselim se vidjeti vas na treningu.</p>
           <p style="margin-top: 3em;">Matija</p>
-          <!-- <p id="years"></p> -->
         </section>
       </main>
       <footer></footer>
@@ -202,15 +204,6 @@
   <script src="https://unpkg.com/gsap/dist/ScrollTrigger.min.js"></script>
   <script src="../js/smooth.min.js"></script>
   <script src="app.js"></script>
-  <script>
-    const years = document.getElementById('years');
-    let getYearDiff = (year) => {
-      let cDate = new Date()
-      let cYear = cDate.getFullYear()
-      return cYear - year
-    }
-    years != null ? years.innerHTML = `${getYearDiff(1983)}` : null
-  </script>
 </body>
 
 </html>

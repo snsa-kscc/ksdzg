@@ -954,3 +954,15 @@ textarea:not(:placeholder-shown) + label::after {
   inset: 0;
   mix-blend-mode: darken;
 }
+
+.pain {
+  position: relative;
+}
+
+.pain::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-bg-color);
+  inset: 0;
+  transform-origin: right;
+}

@@ -7,7 +7,7 @@
 */
 
 :root {
-  --main-bg-color: hsl(220, 23%, 8%);
+  --main-bg-color: 220, 23%, 8%;
   --accent-color: hsl(0, 0%, 81%);
   --secondary-color: hsl(0, 59%, 50%);
   --tertiary-color: hsl(166, 67%, 73%);
@@ -30,7 +30,7 @@ body {
   font-size: clamp(1.6rem, 4.2vw, 2.2rem);
   line-height: 1.6em;
   color: var(--accent-color);
-  background: var(--main-bg-color);
+  background: hsl(var(--main-bg-color));
 }
 
 img,
@@ -173,7 +173,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--main-bg-color);
+  background-color: hsl(var(--main-bg-color));
 }
 
 .slim {
@@ -233,7 +233,7 @@ header {
   position: fixed;
   z-index: 1;
   padding: 0 5%;
-  background: var(--main-bg-color);
+  background: hsla(var(--main-bg-color), 0.9);
 }
 
 footer {
@@ -248,7 +248,7 @@ footer {
 }
 
 .wrap-404--bg-color {
-  background: var(--main-bg-color);
+  background: hsl(var(--main-bg-color));
 }
 
 .section-404 {
@@ -281,7 +281,7 @@ footer {
 
 .nav-container,
 .nav-container a {
-  color: var(--main-bg-color);
+  color: hsl(var(--main-bg-color));
 }
 
 .skill {
@@ -432,7 +432,7 @@ footer {
 }
 
 /* .text__glitch {
-  color: var(--main-bg-color);
+  color: hsl(var(--main-bg-color));
   font-size: clamp(2.5rem, 6.5vw, 9rem);
   font-weight: 700;
   display: block;
@@ -468,7 +468,7 @@ footer {
   position: absolute;
   top: 1em;
   right: 1em;
-  color: var(--main-bg-color);
+  color: hsl(var(--main-bg-color));
 }
 
 .legacy {
@@ -547,7 +547,7 @@ footer {
 .skill-features__item::after {
   content: "";
   position: absolute;
-  background-color: var(--main-bg-color);
+  background-color: hsl(var(--main-bg-color));
   left: 0;
   width: 100%;
   height: 100%;
@@ -638,7 +638,7 @@ footer {
 
 .info > div:first-child {
   background: var(--tertiary-color);
-  color: var(--main-bg-color);
+  color: hsl(var(--main-bg-color));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -647,7 +647,7 @@ footer {
 }
 
 .info > div:nth-child(2) {
-  background-color: var(--main-bg-color);
+  background-color: hsl(var(--main-bg-color));
 }
 
 .info > div {
@@ -851,7 +851,7 @@ textarea:not(:placeholder-shown) + label::after {
 .approach-hero__img::after {
   content: "";
   position: absolute;
-  background-color: var(--main-bg-color);
+  background-color: hsl(var(--main-bg-color));
   top: 0;
   width: 100%;
   height: 100%;
@@ -937,7 +937,7 @@ textarea:not(:placeholder-shown) + label::after {
 
 .title__text--story {
   position: relative;
-  color: var(--main-bg-color);
+  color: hsl(var(--main-bg-color));
   /* text-shadow: -3px -3px 0 #fff, 3px 3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff; */
 }
 
@@ -962,7 +962,11 @@ textarea:not(:placeholder-shown) + label::after {
 .pain::after {
   content: "";
   position: absolute;
-  background-color: var(--main-bg-color);
+  background-color: hsl(var(--main-bg-color));
   inset: 0;
   transform-origin: right;
+}
+
+.basis-content {
+  flex: 1 1 auto;
 }

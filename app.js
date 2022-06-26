@@ -31,6 +31,7 @@ gsap.to(".loader", {
   onComplete: () => {
     document.querySelector("body").classList.toggle("overflow--hidden");
     animateUpCharacter();
+    revealPhoto();
   },
 });
 
@@ -45,6 +46,17 @@ const animateUpCharacter = () => {
         });
       });
     }, 300 * idx);
+  });
+};
+
+let rule = CSSRulePlugin.getRule(".pain::after");
+
+const revealPhoto = () => {
+  gsap.to(rule, {
+    duration: 1,
+    delay: 0.5,
+    ease: "power2.inOut",
+    cssRule: { scaleX: 0 },
   });
 };
 

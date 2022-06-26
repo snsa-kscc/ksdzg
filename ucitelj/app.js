@@ -46,3 +46,10 @@ navClose.addEventListener("click", () => {
   menuTl.reverse();
   document.querySelector("body").classList.toggle("overflow--hidden");
 });
+
+gsap.to(".h-1.bg-sky-300", {
+  width: "100%",
+  duration: 1,
+  delay: 0.5,
+  ease: "power2.inOut",
+});

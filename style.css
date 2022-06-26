@@ -85,6 +85,7 @@ main {
   max-width: 192rem;
   padding: 5em 0 0;
   overflow-x: hidden;
+  margin: 0 auto;
 }
 
 .st0 {
@@ -301,6 +302,18 @@ footer {
   flex: 1 1 35rem;
 }
 
+.skill__item--relative {
+  position: relative;
+}
+
+.skill__item--relative::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(var(--main-bg-color));
+  inset: 0;
+  transform-origin: left;
+}
+
 .skill__item--wide {
   flex: 2 1 35rem;
   margin: 3em;
@@ -318,7 +331,7 @@ footer {
 
 .skill__overflow {
   display: flex;
-  transform: translateX(22%);
+  margin-left: 4em;
   overflow-y: hidden;
 }
 
@@ -959,14 +972,11 @@ textarea:not(:placeholder-shown) + label::after {
   position: relative;
 }
 
-.pain::after {
+.pain::after,
+.skill__item--relative::after {
   content: "";
   position: absolute;
   background-color: hsl(var(--main-bg-color));
   inset: 0;
   transform-origin: right;
-}
-
-.basis-content {
-  flex: 1 1 auto;
 }

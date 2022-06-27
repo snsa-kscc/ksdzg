@@ -395,7 +395,7 @@ footer {
   font-size: clamp(4rem, 10vw, 13rem);
 }
 
-.title__text--accent {
+.text--accent {
   color: var(--secondary-color);
 }
 
@@ -421,6 +421,11 @@ footer {
   font-weight: 700;
   display: block;
   line-height: 1em;
+}
+
+.mid__text {
+  font-size: clamp(2.7rem, 4vw, 4rem);
+  line-height: 1.4em;
 }
 
 .link__text {
@@ -495,8 +500,6 @@ footer {
 
 .legacy__one {
   grid-column: 3 / span 6;
-  font-size: clamp(2.7rem, 4vw, 4rem);
-  line-height: 1.4em;
 }
 
 .legacy__two {
@@ -946,7 +949,35 @@ textarea:not(:placeholder-shown) + label::after {
   max-width: 4em;
 }
 
-/* testiranje */
+.bg-gradient {
+  position: absolute;
+  inset: 0;
+  height: 100vh;
+}
+
+.bg-gradient__img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  filter: blur(64px);
+}
+
+.path__first {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  margin: 10em 0 10em 3em;
+}
+
+.path__line {
+  height: 1px;
+  background: var(--tertiary-color);
+}
+
+.path__second {
+  text-align: right;
+  margin: 3.5em 0;
+}
 
 .title__text--story {
   position: relative;
@@ -968,6 +999,15 @@ textarea:not(:placeholder-shown) + label::after {
   mix-blend-mode: darken;
 }
 
+.title__text--story-no-shrink {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.title__text--story-inline-block {
+  display: inline-block;
+}
+
 .pain {
   position: relative;
 }
@@ -979,4 +1019,32 @@ textarea:not(:placeholder-shown) + label::after {
   background-color: hsl(var(--main-bg-color));
   inset: 0;
   transform-origin: right;
+}
+
+.pain__img {
+  max-height: 90vh;
+  object-fit: cover;
+  object-position: top;
+  padding: 1px 0;
+}
+
+.kid {
+  margin: 6em clamp(3.5em, 7vw, 4.5em);
+}
+
+.kid__line {
+  height: 1px;
+  background: var(--tertiary-color);
+  margin: 2em 0;
+  width: 0;
+}
+
+.kid__flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5em;
+}
+
+.kid__group {
+  flex: 1 1 34rem;
 }

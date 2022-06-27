@@ -13,14 +13,43 @@ window.addEventListener("unload", () => {
 });
 
 let rule = CSSRulePlugin.getRule(".pain::after");
-
-gsap.to(rule, {
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".pain",
-    start: "top center",
+let tl = gsap.timeline({
+  delay: 0.5,
+  defaults: {
+    duration: 1,
+    ease: "power2.inOut",
   },
-  cssRule: { scaleX: 0 },
+});
+
+tl.to(".path__line", {
+  width: "100%",
+});
+
+tl.to(
+  rule,
+  {
+    cssRule: { scaleX: 0 },
+  },
+  "+=0.5"
+);
+
+const observableItems = document.querySelectorAll(".fade");
+const options = {
+  threshold: 0,
+  rootMargin: "0px 0px -25% 0px",
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0) {
+      entry.target.classList.add("fade-in");
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+observableItems.forEach((item) => {
+  observer.observe(item);
 });
 
 const menuTl = gsap.timeline({
@@ -47,9 +76,13 @@ navClose.addEventListener("click", () => {
   document.querySelector("body").classList.toggle("overflow--hidden");
 });
 
-gsap.to(".h-1.bg-sky-300", {
-  width: "100%",
+gsap.to([".kid__line--first", ".kid__line--second"], {
   duration: 1,
-  delay: 0.5,
+  width: "100%",
   ease: "power2.inOut",
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".kid",
+    start: "top 70%",
+  },
 });

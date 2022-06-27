@@ -7,7 +7,6 @@
   <title>Učitelj - KukSulDoZg - come as you are</title>
   <meta name="title" content="Učitelj - KukSulDoZg - come as you are" />
   <meta name="description" content="Borilačka škola iz Koreje u Zagrebu." />
-  <script src="https://cdn.tailwindcss.com"></script> <!-- 2 DO: erase this!!!!! Tailwind CSS -->
   <link rel="stylesheet" href="../style.css" />
 </head>
 
@@ -93,42 +92,46 @@
   </header>
   <div id="smooth-wrapper">
     <div id="smooth-content" class="wrap-404 wrap-404--bg-color">
-      <div class="absolute h-screen inset-0"><img class="h-full object-cover object-center blur-3xl" src="../img/bg.png" alt="background"></div>
+      <div class="bg-gradient"><img class="bg-gradient__img" src="../img/bg.png" alt="background"></div>
       <main>
-        <section class="min-h-screen">
-          <div class="flex my-80 items-center gap-8 ml-12">
-            <h2 class="title__text title__text--subhead title__text--story m-0 shrink-0">Od astme</h2>
-            <div class="h-1 bg-sky-300"></div>
+        <section class="path">
+          <div class="path__first">
+            <h2 class="title__text title__text--subhead title__text--story title__text--story-no-shrink">Od astme</h2>
+            <div class="path__line"></div>
           </div>
-          <div class="text-right">
-            <h2 class="title__text title__text--subhead title__text--story inline-block">do ultre</h2>
+          <div class="path__second">
+            <h2 class="title__text title__text--subhead title__text--story title__text--story-inline-block">do ultre</h2>
           </div>
         </section>
-        <section class="flex">
-          <div class="flex-1"></div>
-          <div class="flex-1 pain"><img src="../img/pain.jpg" alt="pain"></div>
+        <section class="pain">
+          <img class="pain__img" src="../img/pain.jpg" alt="pain">
         </section>
-        <section class="flex m-16">
-          <div class="flex-1">
-            <p>Tvoj instruktor nije sportaš. Tvoj instruktor ne voli sport.</p>
-            <p>
-              Barem je tako bilo kad sam bio klinac. I nije da nisam volio sport, već sam bio loš u svemu što sam pokušao, bio to nogomet s ekipom u kvartu,
-              trčanje za ocjenu na tjelesnom. Mrzio sam trčanje. Jer mi nije išlo, uvijek zadnji, uvijek s manjkom daha, uvijek s inhalatorom. Klinac s
-              inhalatorom kojem se djeca rugaju. Jer ima previše kila, jer izgleda smješno kad se pokušava baviti sportom, jer mu nikad ne ide, ne zabija
-              golove, a stalno ih dobiva. Ne sjećam se je li bilo lošije da se ljute na mene ili mi se smiju. Jednako je bilo bolno.
-            </p>
-            <p>
-              Klinac koji je radije doma, igra igrice na Nintendu i gleda crtiće. Klinac kojem prijatelji dolaze doma igrati igrice, ali kasnije odlaze van
-              trčat za loptom, a on ostaje doma u svojoj „comfort zone“, iako su me roditelji skoro molili da izađem, poticali na igru i druženje vani. Ali
-              crtići ti se ne rugaju. „Kid sister“, mlađa sestra, skoro profesionalna ritmička gimnastičarka, višestruka prvakinja u svim starosnim
-              kategorijama, sigurno mi nije bila motivacija.
-            </p>
+        <section class="kid">
+          <div class="kid__line kid__line--first"></div>
+          <div class="kid__flex fade">
+            <div class="kid__group">
+              <p class="mid__text">Tvoj instruktor <span class="text--accent">nije</span> sportaš. Tvoj instruktor <span class="text--accent">ne voli</span> sport.</p>
+            </div>
+            <div class="kid__group">
+              <p>
+                Barem je tako bilo kad sam bio klinac. I nije da nisam volio sport, već sam bio loš u svemu što sam pokušao, bio to nogomet s ekipom u kvartu,
+                trčanje za ocjenu na tjelesnom. Mrzio sam trčanje. Jer mi nije išlo, uvijek zadnji, uvijek s manjkom daha, uvijek s inhalatorom. Klinac s
+                inhalatorom kojem se djeca rugaju. Jer ima previše kila, jer izgleda smješno kad se pokušava baviti sportom, jer mu nikad ne ide, ne zabija
+                golove, a stalno ih dobiva. Ne sjećam se je li bilo lošije da se ljute na mene ili mi se smiju. Jednako je bilo bolno.
+              </p>
+              <p>
+                Klinac koji je radije doma, igra igrice na Nintendu i gleda crtiće. Klinac kojem prijatelji dolaze doma igrati igrice, ali kasnije odlaze van
+                trčat za loptom, a on ostaje doma u svojoj „comfort zone“, iako su me roditelji skoro molili da izađem, poticali na igru i druženje vani. Ali
+                crtići ti se ne rugaju. „Kid sister“, mlađa sestra, skoro profesionalna ritmička gimnastičarka, višestruka prvakinja u svim starosnim
+                kategorijama, sigurno mi nije bila motivacija.
+              </p>
+            </div>
           </div>
-          <div class="flex-1"></div>
+          <div class="kid__line kid__line--second"></div>
         </section>
         <section>
           <h2 class="title__text title__text--subhead title__text--story">Fast forward…</h2>
-          <p class="transition-all">
+          <p>
             U srednjoj me prijatelj potaknuo da krenem s njim u teretanu, da izgubim koju kilu, ojačam. Tu sam zaključio da mogu raditi na sebi, s nekim, ili
             sam. Primijetio sam promjenu. Počela me zanimati „zdrava“ prehrana i briga za sebe. No iako me to pokrenulo, ubrzo je postalo dosadno.
           </p>

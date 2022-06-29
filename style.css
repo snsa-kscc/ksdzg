@@ -1048,3 +1048,7 @@ textarea:not(:placeholder-shown) + label::after {
 .kid__group {
   flex: 1 1 34rem;
 }
+
+.section {
+  margin: 6em clamp(3.5em, 7vw, 4.5em);
+}

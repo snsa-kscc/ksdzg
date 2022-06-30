@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 ScrollSmoother.create({
   smooth: 1.2,
   effects: true,
-  // smoothTouch: 0.000001,
+  smoothTouch: 0.000001,
 });
 
 // skrol do vrha
@@ -84,5 +84,19 @@ gsap.to([".kid__line--first", ".kid__line--second"], {
   scrollTrigger: {
     trigger: ".kid",
     start: "top 70%",
+  },
+});
+
+const circle = document.querySelector("circle");
+const circleLength = circle.getTotalLength();
+circle.style.strokeDasharray = circleLength;
+circle.style.strokeDashoffset = circleLength;
+
+ScrollTrigger.create({
+  trigger: ".svg-story",
+  start: "center center",
+  pin: true,
+  onUpdate: (self) => {
+    circle.style.strokeDashoffset = circleLength - self.progress * circleLength;
   },
 });

@@ -140,6 +140,11 @@ main {
   fill: #ffffff;
 }
 
+.svg-line__secondary {
+  stroke: var(--secondary-color);
+  stroke-width: 25;
+}
+
 .svg-line__tertiary {
   fill: var(--tertiary-color);
 }
@@ -1051,4 +1056,9 @@ textarea:not(:placeholder-shown) + label::after {
 
 .section {
   margin: 6em clamp(3.5em, 7vw, 4.5em);
+}
+
+.svg-story {
+  max-width: 50%;
+  margin: 0 auto 2em;
 }

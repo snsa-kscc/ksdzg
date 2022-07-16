@@ -87,6 +87,41 @@ gsap.to([".kid__line--first", ".kid__line--second"], {
   },
 });
 
+ScrollTrigger.matchMedia({
+  "(min-width: 878px)": () => {
+    gsap.to(".wrapper--left", {
+      // x: -400,
+      xPercent: -30,
+      scale: 0.5,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: ".wrapper--left",
+        start: "top center",
+        end: "bottom 30%",
+        scrub: true,
+        pin: true,
+        pinSpacing: false,
+        markers: true,
+      },
+    });
+
+    gsap.to(".wrapper--right", {
+      // x: 400,
+      xPercent: 30,
+      scale: 0.5,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: ".wrapper--right",
+        start: "top center",
+        end: "bottom 30%",
+        scrub: true,
+        pin: true,
+        pinSpacing: false,
+      },
+    });
+  },
+});
+
 const circle = document.querySelector("circle");
 const circleLength = circle.getTotalLength();
 circle.style.strokeDasharray = circleLength;
@@ -95,6 +130,7 @@ circle.style.strokeDashoffset = circleLength;
 ScrollTrigger.create({
   trigger: ".svg-story",
   start: "center center",
+  end: () => `${innerHeight * 2}`,
   pin: true,
   onUpdate: (self) => {
     circle.style.strokeDashoffset = circleLength - self.progress * circleLength;

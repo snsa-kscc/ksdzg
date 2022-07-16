@@ -1054,6 +1054,8 @@ textarea:not(:placeholder-shown) + label::after {
   flex: 1 1 34rem;
 }
 
+/* testing */
+
 .section {
   margin: 6em clamp(3.5em, 7vw, 4.5em);
 }
@@ -1061,4 +1063,23 @@ textarea:not(:placeholder-shown) + label::after {
 .svg-story {
   max-width: 50%;
   margin: 0 auto 2em;
+}
+
+.wrapper {
+  background: hsl(var(--main-bg-color));
+}
+
+.wrapper {
+  margin-bottom: 20vh;
+  z-index: -69;
+}
+
+.flex-parent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.flex-item {
+  flex: 1 1 34rem;
 }

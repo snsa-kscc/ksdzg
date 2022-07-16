@@ -1002,6 +1002,7 @@ textarea:not(:placeholder-shown) + label::after {
   background: linear-gradient(315deg, var(--secondary-color), var(--tertiary-color));
   inset: 0;
   mix-blend-mode: darken;
+  margin: 1px;
 }
 
 .title__text--story-no-shrink {

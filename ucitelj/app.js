@@ -101,7 +101,6 @@ ScrollTrigger.matchMedia({
         scrub: true,
         pin: true,
         pinSpacing: false,
-        markers: true,
       },
     });
 

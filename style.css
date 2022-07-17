@@ -958,13 +958,14 @@ textarea:not(:placeholder-shown) + label::after {
   position: absolute;
   inset: 0;
   height: 100vh;
+  z-index: -69;
 }
 
 .bg-gradient__img {
   object-fit: cover;
   object-position: center;
   height: 100%;
-  filter: blur(64px);
+  /* filter: blur(6.4rem); */
 }
 
 .path__first {

@@ -81,6 +81,14 @@ ul {
   overflow: hidden;
 }
 
+.mb--lg {
+  margin-bottom: 2.5em;
+}
+
+.mt--lg {
+  margin-top: 3em;
+}
+
 main {
   max-width: 192rem;
   padding: 5em 0 0;
@@ -153,6 +161,11 @@ main {
   fill: none;
   stroke: var(--tertiary-color);
   stroke-width: 3;
+}
+
+.svg-story {
+  max-width: 50%;
+  margin: 0 auto 2em;
 }
 
 .fade {
@@ -430,7 +443,7 @@ footer {
 
 .mid__text {
   font-size: clamp(2.7rem, 4vw, 4rem);
-  line-height: 1.4em;
+  line-height: 1.8em;
 }
 
 .link__text {
@@ -1056,32 +1069,67 @@ textarea:not(:placeholder-shown) + label::after {
   flex: 1 1 34rem;
 }
 
-/* testing */
-
-.section {
-  margin: 6em clamp(3.5em, 7vw, 4.5em);
+.teacher-section {
+  margin: 8em clamp(3.5em, 7vw, 4.5em);
 }
 
-.svg-story {
-  max-width: 50%;
-  margin: 0 auto 2em;
-}
-
-.wrapper {
+.teacher-wrapper {
   background: hsl(var(--main-bg-color));
-}
-
-.wrapper {
   margin-bottom: 20vh;
   z-index: -69;
 }
 
-.flex-parent {
+.teacher-parent {
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
 }
 
-.flex-item {
+.teacher-parent--center {
+  align-items: center;
+}
+
+.teacher-item {
   flex: 1 1 34rem;
+}
+
+.teacher-item--wide {
+  flex: 6 1 34rem;
+}
+
+.teacher-item--narrow {
+  flex: 1 1 34rem;
+}
+
+.shift {
+  position: fixed;
+  top: -10vh;
+  height: 120vh;
+  width: 100%;
+  display: grid;
+  pointer-events: none;
+}
+
+.shift__layer {
+  position: relative;
+  overflow: hidden;
+  margin-top: -0.5px;
+  transform: rotate(4deg) scale(1.1);
+  width: 120%;
+  left: -10%;
+}
+
+.shift__layer-inner {
+  height: 100%;
+  background: var(--accent-color);
+  transform: translate3d(0, -101%, 0);
+}
+
+.shift__img {
+  border-radius: 100vw;
+  filter: invert(1);
+}
+
+.blend {
+  mix-blend-mode: exclusion;
 }

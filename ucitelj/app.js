@@ -89,13 +89,13 @@ gsap.to([".kid__line--first", ".kid__line--second"], {
 
 ScrollTrigger.matchMedia({
   "(min-width: 878px)": () => {
-    gsap.to(".wrapper--left", {
+    gsap.to(".teacher-wrapper--left", {
       // x: -400,
       xPercent: -30,
       scale: 0.5,
       ease: "power1.inOut",
       scrollTrigger: {
-        trigger: ".wrapper--left",
+        trigger: ".teacher-wrapper--left",
         start: "top center",
         end: "bottom 30%",
         scrub: true,
@@ -104,13 +104,13 @@ ScrollTrigger.matchMedia({
       },
     });
 
-    gsap.to(".wrapper--right", {
+    gsap.to(".teacher-wrapper--right", {
       // x: 400,
       xPercent: 30,
       scale: 0.5,
       ease: "power1.inOut",
       scrollTrigger: {
-        trigger: ".wrapper--right",
+        trigger: ".teacher-wrapper--right",
         start: "top center",
         end: "bottom 30%",
         scrub: true,
@@ -133,5 +133,16 @@ ScrollTrigger.create({
   pin: true,
   onUpdate: (self) => {
     circle.style.strokeDashoffset = circleLength - self.progress * circleLength;
+  },
+});
+
+const layers = document.querySelectorAll(".shift__layer-inner");
+
+ScrollTrigger.create({
+  trigger: ".trigger",
+  start: "top bottom",
+  end: "top center",
+  onUpdate: (self) => {
+    layers.forEach((layer) => (layer.style.transform = `translate3d(0, ${(1 - self.progress) * -101}%, 0)`));
   },
 });
